@@ -4,29 +4,40 @@
    Mobile-first; every block is built small-screen up. */
 
 /* ---------------------------------------------------------------- tokens */
+/* The palette is the shop's own, read straight out of the tortufa.ru theme:
+     --fs-color-primary   #d99494  dusty rose   (hero fields, category labels)
+     --fs-color-secondary #bf1771  fuchsia      (the logo, every primary button)
+     --fs-color-success   #7a9c59  sage green   (the 5% badge, the leaves in the logo)
+     body text            #342d31  dark plum
+   Each one is kept where the shop uses it. The greys and the dark theme are solved
+   from those same hues so nothing drops below 4.5:1 — the rose is 2.4:1 on white and
+   is therefore a surface colour here, never text. */
 :root {
-  --paper: #fbf3e7;
-  --paper-2: #f4e7d3;
-  --paper-3: #eddcc2;
-  --card: #fffaf1;
-  --ink: #17120e;
-  --ink-2: #584a3d;
-  /* 5.07:1 on paper — the old #8d7c69 measured 3.65 and failed AA for the small
-     meta text it is used on almost everywhere */
-  --ink-3: #746656;
-  --berry: #a81236;
-  --on-berry: #fff;
-  --berry-soft: #f3d9de;
-  /* --caramel and --pistachio are graphic tones (bars, pins, fills); --ok is their
-     text-safe counterpart, because neither clears 4.5:1 on cream */
-  --caramel: #c9762f;
-  --pistachio: #7f9c45;
-  --ok: #5a6f31;
-  --cocoa: #3f2317;
-  --line: rgba(23, 18, 14, 0.14);
-  --line-2: rgba(23, 18, 14, 0.07);
-  --shadow: 0 1px 2px rgba(63, 35, 23, 0.06), 0 12px 32px -12px rgba(63, 35, 23, 0.22);
-  --shadow-lift: 0 2px 4px rgba(63, 35, 23, 0.08), 0 28px 60px -20px rgba(63, 35, 23, 0.34);
+  --paper: #fffcfc;
+  --paper-2: #fbeff0;
+  --paper-3: #f6e3e5;
+  --card: #ffffff;
+
+  --ink: #342d31;      /* the shop's own body colour, 12.75:1 */
+  --ink-2: #6b5f64;    /* 5.79:1 */
+  --ink-3: #726770;    /* 4.58:1 */
+
+  --berry: #bf1771;    /* brand fuchsia — 5.58:1 as text, 5.87:1 under white */
+  --on-berry: #ffffff;
+  --berry-soft: #fbe4ef;
+
+  --rose: #d99494;     /* brand rose — surfaces and graphics only */
+  --rose-soft: #f7e4e4;
+
+  --green: #7a9c59;    /* brand green as a graphic */
+  --ok: #51792e;       /* the same green made safe for text, 4.84:1 */
+
+  --cocoa: #5a3a24;    /* not brand chrome: this one means chocolate */
+
+  --line: rgba(52, 45, 49, 0.15);
+  --line-2: rgba(52, 45, 49, 0.08);
+  --shadow: 0 1px 2px rgba(52, 45, 49, 0.06), 0 12px 32px -12px rgba(52, 45, 49, 0.22);
+  --shadow-lift: 0 2px 4px rgba(52, 45, 49, 0.08), 0 28px 60px -20px rgba(52, 45, 49, 0.32);
 
   --display: "Playfair Display", "Times New Roman", Georgia, serif;
   --sans: "Inter", -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
@@ -38,35 +49,38 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Dark theme: the same four hues, lifted off a plum ground rather than a neutral one,
+   so the brand still reads at night. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #171210;
-    --paper-2: #211a16;
-    --paper-3: #2c231d;
-    --card: #221b17;
-    --ink: #f7ecdd;
-    --ink-2: #c3b3a1;
-    --ink-3: #92816f;
-    --berry: #ff6d8c;
-    --on-berry: #2a0f16;
-    --berry-soft: #43222b;
-    --caramel: #e8a75e;
-    --pistachio: #b3cf74;
-    --ok: #b3cf74;
-    --cocoa: #f2dfc7;
-    --line: rgba(247, 236, 221, 0.16);
-    --line-2: rgba(247, 236, 221, 0.08);
+    --paper: #1a1618;
+    --paper-2: #241f22;
+    --paper-3: #2f282c;
+    --card: #241f22;
+    --ink: #edecec;
+    --ink-2: #b9b4b6;
+    --ink-3: #988f92;
+    --berry: #d76da6;
+    --on-berry: #2a0a18;
+    --berry-soft: #3d1a2c;
+    --rose: #d99494;
+    --rose-soft: #3a2a2c;
+    --green: #789b59;
+    --ok: #789b59;
+    --cocoa: #e6cdb6;
+    --line: rgba(237, 236, 236, 0.16);
+    --line-2: rgba(237, 236, 236, 0.08);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 34px -14px rgba(0, 0, 0, 0.7);
     --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.55), 0 30px 64px -22px rgba(0, 0, 0, 0.8);
   }
 }
 :root[data-theme="dark"] {
-  --paper: #171210; --paper-2: #211a16; --paper-3: #2c231d; --card: #221b17;
-  --ink: #f7ecdd; --ink-2: #c3b3a1; --ink-3: #92816f;
-  --berry: #ff6d8c;
-    --on-berry: #2a0f16; --berry-soft: #43222b; --caramel: #e8a75e; --pistachio: #b3cf74;
-    --ok: #b3cf74; --cocoa: #f2dfc7;
-  --line: rgba(247, 236, 221, 0.16); --line-2: rgba(247, 236, 221, 0.08);
+  --paper: #1a1618; --paper-2: #241f22; --paper-3: #2f282c; --card: #241f22;
+  --ink: #edecec; --ink-2: #b9b4b6; --ink-3: #988f92;
+  --berry: #d76da6; --on-berry: #2a0a18; --berry-soft: #3d1a2c;
+  --rose: #d99494; --rose-soft: #3a2a2c;
+  --green: #789b59; --ok: #789b59; --cocoa: #e6cdb6;
+  --line: rgba(237, 236, 236, 0.16); --line-2: rgba(237, 236, 236, 0.08);
   --shadow: 0 1px 2px rgba(0,0,0,.5), 0 14px 34px -14px rgba(0,0,0,.7);
   --shadow-lift: 0 2px 6px rgba(0,0,0,.55), 0 30px 64px -22px rgba(0,0,0,.8);
 }
@@ -87,8 +101,8 @@ body {
   overflow-x: hidden;
   /* faint paper tooth */
   background-image:
-    radial-gradient(circle at 18% 12%, rgba(201, 118, 47, 0.05), transparent 45%),
-    radial-gradient(circle at 84% 78%, rgba(168, 18, 54, 0.045), transparent 42%);
+    radial-gradient(circle at 18% 10%, rgba(217, 148, 148, 0.08), transparent 42%),
+    radial-gradient(circle at 86% 82%, rgba(191, 23, 113, 0.035), transparent 38%);
   background-attachment: fixed;
 }
 
@@ -225,7 +239,7 @@ button.chip:hover { border-color: var(--ink-3); color: var(--ink); }
   font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
   padding: 0.25em 0.6em; border-radius: 5px; background: var(--paper-2); color: var(--ink-2);
 }
-.tag--lenten { background: color-mix(in srgb, var(--pistachio) 22%, var(--card)); color: color-mix(in srgb, var(--pistachio) 70%, var(--ink)); }
+.tag--lenten { background: color-mix(in srgb, var(--green) 22%, var(--card)); color: var(--ok); }
 .tag--choco { background: color-mix(in srgb, var(--cocoa) 16%, var(--card)); color: color-mix(in srgb, var(--cocoa) 72%, var(--ink)); }
 .tag--fruit { background: var(--berry-soft); color: var(--berry); }
 .tag--sale { background: var(--berry); color: var(--on-berry); }

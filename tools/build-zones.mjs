@@ -10,17 +10,17 @@ const map = JSON.parse(await readFile('data/ufa.json', 'utf8'))
 
 // zone → price, straight from the shop's own published table
 const ZONES = [
-  { key: 'sipailovo', price: 250, tone: '#4E8C6A', places: [{ name: 'Сипайлово', q: 'микрорайон Сипайлово, Октябрьский район, Уфа' }] },
-  { key: 'chernikovka', price: 400, tone: '#6E9B57', places: [
+  { key: 'sipailovo', price: 250, tone: '#e0aeae', places: [{ name: 'Сипайлово', q: 'микрорайон Сипайлово, Октябрьский район, Уфа' }] },
+  { key: 'chernikovka', price: 400, tone: '#d99494', places: [
     { name: 'Черниковка', q: 'Черниковка, Уфа' },
     { name: 'Инорс', q: 'микрорайон Инорс, Калининский район, Уфа' },
   ] },
-  { key: 'oktyabrya', price: 450, tone: '#B79242', places: [
+  { key: 'oktyabrya', price: 450, tone: '#c96d8b', places: [
     { name: 'Пр. Октября', q: 'проспект Октября, Уфа' },
     { name: 'Зелёная роща', q: 'Зелёная роща, Уфа' },
   ] },
-  { key: 'center', price: 600, tone: '#C9762F', places: [{ name: 'Центр', q: 'Гостиный двор, Уфа' }] },
-  { key: 'edge', price: 700, tone: '#B4502C', places: [
+  { key: 'center', price: 600, tone: '#bf1771', places: [{ name: 'Центр', q: 'Гостиный двор, Уфа' }] },
+  { key: 'edge', price: 700, tone: '#8e1256', places: [
     { name: 'Затон', q: 'микрорайон Затон, Ленинский район, Уфа' },
     { name: 'Дёма', q: 'Дёма, Уфа' },
     { name: 'Шакша', q: 'Шакша, Уфа' },
@@ -66,7 +66,7 @@ map.delivery = {
   noSlotFrom: 2000,
   pickup: 'Самовывоз из всех магазинов — бесплатно',
   window: 'Заказ с 8:00 до 20:00 — доставка на следующий день с 8:00 до 15:00, без указания конкретного времени',
-  suburb: { label: 'Пригороды Уфы', price: 1000, tone: '#8A6A4F' },
+  suburb: { label: 'Пригороды Уфы', price: 1000, tone: '#5e0d39' },
   zones,
   source: 'https://tortufa.ru/oplata_dostavka/',
 }

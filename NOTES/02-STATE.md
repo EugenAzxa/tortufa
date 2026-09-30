@@ -101,3 +101,32 @@ right shape instead of collapsing and jumping when the catalogue lands.
 Design-system check confirmed the direction: pattern "Immersive/Interactive Experience",
 editorial serif + grotesque pairing. The recommended generic editorial palette (black +
 pink) was **not** adopted — cream and berry suit a bakery better and already pass AA.
+
+## Brand palette (30 Sept 2026)
+
+The cream-and-berry palette was invented; it has been replaced with the shop's own,
+read out of the live tortufa.ru Flatsome theme config rather than eyeballed:
+
+| Theme variable | Value | Where the shop uses it | Where it is used here |
+|---|---|---|---|
+| `--fs-color-secondary` | `#bf1771` fuchsia | the logo, «Перейти в каталог», headings | `--berry` — every accent and primary button |
+| `--fs-color-primary` | `#d99494` dusty rose | hero panels, category labels | `--rose` — surfaces and graphics |
+| `--fs-color-success` | `#7a9c59` sage | the «скидка 5%» badge | `--green`, plus `--ok` for text |
+| body text | `#342d31` plum | all copy | `--ink` |
+
+The background follows the original: white (`#fffcfc`) with rose-tinted surfaces,
+not cream paper.
+
+Two colours are deliberately *not* used as the shop uses them:
+- The rose is **2.44:1 on white**. The shop sets category labels in it; here it is a
+  surface and graphic colour only, and text on rose is plum (5.50:1).
+- The sage is 3.12:1. It stays a graphic; text uses `--ok` `#51792e` (4.54:1).
+
+Greys and the whole dark theme were solved numerically from those same four hues.
+Every pair clears 4.5:1 in both themes — verified, not assumed.
+
+The delivery map now uses one brand ramp instead of the old arbitrary green→red:
+light rose (250 ₽) deepening through the brand fuchsia to near-black plum (1000 ₽),
+with green reserved for free delivery. It reads as a price sequence now.
+
+The layer colours inside the cakes are untouched — those are food, not brand.

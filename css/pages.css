@@ -45,15 +45,15 @@
 .umap__city-sh { fill: none; stroke: var(--ink); stroke-width: 9; opacity: 0.06; stroke-linejoin: round; }
 .umap__city { fill: var(--paper-2); stroke: var(--line); stroke-width: 1.4; }
 .umap__d {
-  fill: color-mix(in srgb, var(--tone) 26%, var(--paper-2));
+  fill: color-mix(in srgb, var(--tone) 36%, var(--paper-2));
   stroke: var(--paper); stroke-width: 1.6; stroke-linejoin: round;
   cursor: pointer; transition: fill 0.25s, transform 0.3s var(--ease);
   transform-box: fill-box; transform-origin: center;
 }
-.umap__d:hover { fill: color-mix(in srgb, var(--tone) 52%, var(--paper-2)); }
+.umap__d:hover { fill: color-mix(in srgb, var(--tone) 62%, var(--paper-2)); }
 .umap__d.is-on { fill: var(--tone); }
 .umap__d:focus-visible { outline: none; stroke: var(--ink); stroke-width: 3; }
-.umap[data-sel]:not([data-sel=""]) .umap__d:not(.is-on) { fill: color-mix(in srgb, var(--tone) 14%, var(--paper-2)); }
+.umap[data-sel]:not([data-sel=""]) .umap__d:not(.is-on) { fill: color-mix(in srgb, var(--tone) 18%, var(--paper-2)); }
 
 .umap__pins { position: absolute; inset: 0; pointer-events: none; }
 .umap__pins > * { position: absolute; transform: translate(-50%, -50%); pointer-events: auto; }
@@ -105,7 +105,7 @@
 .zone-list li i { width: 10px; height: 10px; border-radius: 999px; background: var(--tone, var(--ink-3)); }
 .zone-list li b { font-weight: 700; }
 .zone-list li.is-on { background: var(--paper-2); }
-.zone-list__free { --tone: var(--pistachio); }
+.zone-list__free { --tone: var(--green); }
 .zone-list__free b { color: var(--ok); }
 
 .map-teaser { display: grid; gap: clamp(1rem, 3vw, 2rem); align-items: center; }
@@ -223,7 +223,7 @@
 .catstat:hover { padding-inline: 0.5rem; background: var(--card); }
 .catstat__name { font-size: 0.875rem; font-weight: 500; }
 .catstat__bar { height: 9px; background: var(--paper-2); border-radius: 999px; overflow: hidden; }
-.catstat__bar i { display: block; height: 100%; background: var(--caramel); border-radius: 999px; }
+.catstat__bar i { display: block; height: 100%; background: var(--rose); border-radius: 999px; }
 .catstat b { font-size: 0.875rem; min-width: 2.5em; text-align: right; }
 .catstat em { grid-column: 2 / -1; font-style: normal; font-size: 0.6875rem; color: var(--ink-3); }
 

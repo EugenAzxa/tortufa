@@ -141,7 +141,7 @@ const bar = (i, tone) => `
 document.querySelector('[data-perkg]').innerHTML = `
   <div class="perkg__col" data-rise>
     <p class="kicker">Выгоднее всего</p>
-    <ol class="perkg__list">${cheap.map((i) => bar(i, 'var(--pistachio)')).join('')}</ol>
+    <ol class="perkg__list">${cheap.map((i) => bar(i, 'var(--green)')).join('')}</ol>
   </div>
   <div class="perkg__col" data-rise>
     <p class="kicker">Самые дорогие за кило</p>

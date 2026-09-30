@@ -83,9 +83,12 @@ export { ICON }
 
 export function shell(page) {
   document.documentElement.classList.add('js')
-  const here = location.pathname.split('/').pop() || 'index.html'
+  // Vercel serves these with cleanUrls, so the address bar says /razrez while the links
+  // say razrez.html. Compare both sides stripped, and treat "" as the cover.
+  const norm = (p) => ((p.split('?')[0].split('/').pop() || '').replace(/\.html$/, '') || 'index')
+  const here = norm(location.pathname)
   const links = (cls) => NAV.map((n) => {
-    const cur = n.href === here || (here === '' && n.href === 'index.html') ? ' aria-current="page"' : ''
+    const cur = norm(n.href) === here ? ' aria-current="page"' : ''
     return cls === 'drawer'
       ? `<a href="${n.href}"${cur}><span>${n.num}</span>${n.label}</a>`
       : `<a href="${n.href}"${cur}>${n.label}</a>`

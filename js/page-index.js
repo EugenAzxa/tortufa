@@ -1,4 +1,4 @@
-/* page-index.js — the cover: hero cake, cut of the week, витрина, ₽/kg chart, map teaser. */
+/* page-index.js – the cover: hero cake, cut of the week, витрина, ₽/kg chart, map teaser. */
 import {
   shell, catalog, ufa, isCake, hasInside, money, gram, esc, cardHTML, wireCards,
   renderSection, Cake3D, openInside, reveal, ICON,
@@ -51,7 +51,7 @@ const week = cakes
 
 document.querySelector('[data-cut-title]').textContent = week.title || week.name
 document.querySelector('[data-cut-sub]').textContent =
-  `${distinct(week)} разных составляющих в одном торте. Наведите на слой — журнал подпишет, что это.`
+  `${distinct(week)} разных составляющих в одном торте. Наведите на слой – журнал подпишет, что это.`
 
 const cutXs = document.querySelector('[data-cut-xs]')
 const drawCut = () => renderSection(cutXs, week)
@@ -112,6 +112,14 @@ document.body.addEventListener('click', (e) => {
   if (ins && !ins.closest('[data-cake-grid]')) { e.preventDefault(); openInside(ins.dataset.inside) }
 })
 
+/* ------------------------------------------------------- конструктор teaser */
+// a second cake, cut open from the start, so the promo shows what the page does
+const promoCv = document.querySelector('[data-promo-cake]')
+if (promoCv) {
+  const showcase = cakes.filter((i) => i.layers.length >= 7)
+  new Cake3D(promoCv, showcase[Math.floor(Math.random() * showcase.length)] || cakes[0], { open: true, hint: false })
+}
+
 /* ---------------------------------------------------------------- lenten */
 const lenten = c.items.filter((i) => i.tags.some((t) => t.key === 'lenten'))
 const lentenCake = lenten.find((i) => i.img && hasInside(i)) || lenten[0]
@@ -147,7 +155,7 @@ document.querySelector('[data-perkg]').innerHTML = `
     <p class="kicker">Самые дорогие за кило</p>
     <ol class="perkg__list">${dear.map((i) => bar(i, 'var(--berry)')).join('')}</ol>
   </div>
-  <p class="perkg__note">Медиана по каталогу тортов — <b class="num">${money(perkg[Math.floor(perkg.length / 2)].perKg)}</b> за килограмм. Считали по весу и цене из каталога цеха.</p>`
+  <p class="perkg__note">Медиана по каталогу тортов – <b class="num">${money(perkg[Math.floor(perkg.length / 2)].perKg)}</b> за килограмм. Считали по весу и цене из каталога цеха.</p>`
 
 /* ---------------------------------------------------------------- map teaser */
 const m = await ufa()

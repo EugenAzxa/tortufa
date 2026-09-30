@@ -130,3 +130,29 @@ light rose (250 ₽) deepening through the brand fuchsia to near-black plum (100
 with green reserved for free delivery. It reads as a price sequence now.
 
 The layer colours inside the cakes are untouched — those are food, not brand.
+
+## Конструктор (30 Sept 2026)
+
+`konstruktor.html` + `js/page-konstruktor.js` + `js/recipe.js` – «Соберите свой торт».
+
+The ingredient palette is not authored: `ingredients()` walks the whole catalogue and
+collects every distinct component by role, sorted by how often the workshop uses it.
+So the constructor can only offer what the cakes are actually made of – 19 коржей,
+19 кремов, 16 начинок, 11 хрустов, 6 покрытий.
+
+`assemble()` in `js/recipe.js` deliberately mirrors `buildStack()` in
+`tools/build-data.mjs`. **If the stacking rules change in one, change the other** –
+otherwise a cake you build yourself would stack differently from the same cake read off
+a product description, and the whole premise breaks.
+
+The price is a **range**, taken from what comparable cakes really cost per kilo: the
+recipe is scored against every catalogue cake by shared components, and the quartiles of
+the closest matches give low/mid/high. When fewer than three cakes overlap it falls back
+to the catalogue median. It is labelled ориентировочно everywhere and the panel says the
+workshop quotes the real price – we are not inventing a price list.
+
+«Похоже на то, что уже пекут» ranks real cakes by Jaccard overlap with the recipe. It
+doubles as a sanity check: if your combination matches nothing, that is worth knowing.
+
+Recipes round-trip through the URL (`?r=classic-3-0-4--`), so a built cake can be shared
+or bookmarked, and the order goes out through WhatsApp like the rest of the basket.

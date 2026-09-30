@@ -65,8 +65,9 @@ const NAV = [
   { href: 'index.html', label: 'Журнал', num: '01' },
   { href: 'razrez.html', label: 'Разрез', num: '02' },
   { href: 'catalog.html', label: 'Витрина', num: '03' },
-  { href: 'karta.html', label: 'Доставка', num: '04' },
-  { href: 'about.html', label: 'Цех', num: '05' },
+  { href: 'konstruktor.html', label: 'Свой торт', num: '04' },
+  { href: 'karta.html', label: 'Доставка', num: '05' },
+  { href: 'about.html', label: 'Цех', num: '06' },
 ]
 
 const ICON = {
@@ -98,7 +99,7 @@ export function shell(page) {
 <a class="skip" href="#main">К содержанию</a>
 <header class="site-head">
   <div class="wrap site-head__in">
-    <a class="logo" href="index.html" aria-label="Тортуфа — сладкий журнал">
+    <a class="logo" href="index.html" aria-label="Тортуфа – сладкий журнал">
       <b>Тортуфа</b><i>журнал</i>
     </a>
     <nav class="nav">${links('nav')}</nav>
@@ -146,14 +147,14 @@ export function shell(page) {
         <p class="kicker kicker--plain">Цех</p>
         <ul class="foot-list">
           <li>г. Уфа, ул. Гагарина 25/1</li>
-          <li>Ежедневно 8:00 — 20:00</li>
+          <li>Ежедневно 8:00 – 20:00</li>
           <li>ООО «Компания Дионис»</li>
         </ul>
       </div>
     </div>
     <div class="site-foot__bar">
       <span>© ${new Date().getFullYear()} Уфа Десерт</span>
-      <span>Состав и цены — по данным каталога tortufa.ru</span>
+      <span>Состав и цены – по данным каталога tortufa.ru</span>
     </div>
   </div>
 </footer>`)
@@ -355,7 +356,7 @@ export function closeInside() {
 export const params = () => new URLSearchParams(location.search)
 
 export function orderText(lines, total) {
-  const rows = lines.map((l) => `• ${l.item.name} — ${l.n} шт. × ${money(l.item.price)}`).join('\n')
+  const rows = lines.map((l) => `• ${l.item.name} – ${l.n} шт. × ${money(l.item.price)}`).join('\n')
   return `Здравствуйте! Хочу заказать:\n${rows}\n\nИтого: ${money(total)}\n\nИмя:\nТелефон:\nАдрес / самовывоз:\nДата и время:`
 }
 

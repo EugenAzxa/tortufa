@@ -48,7 +48,7 @@ const paint = async () => {
       <div class="bsum__row"><span>Доставка</span><b>${free ? 'бесплатно' : `от ${m.delivery.zones[0].price} ₽`}</b></div>
       ${disc ? `<div class="bsum__row" style="color:var(--ok)"><span>Скидка по акции цеха</span><b>−5%</b></div>` : ''}
       <div class="bsum__row bsum__row--total"><span>Итого</span><b class="num">${money(total)}</b></div>
-      ${!free ? `<p class="meta">До бесплатной доставки — ${money(need)}</p>` : ''}
+      ${!free ? `<p class="meta">До бесплатной доставки – ${money(need)}</p>` : ''}
       <textarea data-text readonly aria-label="Текст заказа"></textarea>
       <div style="display:grid;gap:.5rem">
         <a class="btn btn--berry btn--wide" data-wa target="_blank" rel="noopener">Отправить в WhatsApp</a>
@@ -56,7 +56,7 @@ const paint = async () => {
         <button class="btn btn--ghost btn--wide" data-copy>Скопировать заказ</button>
         <button class="btn btn--ghost btn--wide" data-clear>Очистить корзину</button>
       </div>
-      <p class="meta">Оплата — картой МИР/VISA/Mastercard через шлюз Сбербанка или наличными курьеру и в магазинах.</p>
+      <p class="meta">Оплата – картой МИР/VISA/Mastercard через шлюз Сбербанка или наличными курьеру и в магазинах.</p>
     </div>`
 
   const text = orderText(lines, total)
@@ -64,7 +64,7 @@ const paint = async () => {
   sumEl.querySelector('[data-wa]').href = `https://wa.me/79677472114?text=${encodeURIComponent(text)}`
   sumEl.querySelector('[data-copy]').onclick = async () => {
     try { await navigator.clipboard.writeText(text); toast('Заказ скопирован') }
-    catch { sumEl.querySelector('[data-text]').select(); toast('Выделили — скопируйте вручную') }
+    catch { sumEl.querySelector('[data-text]').select(); toast('Выделили – скопируйте вручную') }
   }
   sumEl.querySelector('[data-clear]').onclick = () => { basket.clear() }
 }

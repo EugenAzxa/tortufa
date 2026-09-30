@@ -42,7 +42,7 @@ export function renderMap(host, data, opts = {}) {
       role: interactive ? 'button' : null,
       'aria-label': z ? `${d.name} район, доставка ${z.price} ₽` : `${d.name} район`,
     })
-    const t = el('title'); t.textContent = z ? `${d.name} район — курьер ${z.price} ₽` : `${d.name} район`
+    const t = el('title'); t.textContent = z ? `${d.name} район – курьер ${z.price} ₽` : `${d.name} район`
     p.append(t)
     gD.append(p)
     nodes[d.slug] = p
@@ -81,7 +81,7 @@ export function renderMap(host, data, opts = {}) {
         b.dataset.zone = z.key
         b.style.setProperty('--tone', z.tone)
         b.innerHTML = `<i></i><span><b>${p.name}</b><em>${z.price} ₽</em></span>`
-        b.setAttribute('aria-label', `${p.name} — доставка ${z.price} ₽`)
+        b.setAttribute('aria-label', `${p.name} – доставка ${z.price} ₽`)
         place(b, p.xy)
         layer.append(b)
       }

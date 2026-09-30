@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Соберите свой торт в 3D · Тортуфа</title>
+<meta name="description" content="Конструктор торта: выберите коржи, крем, начинку, хруст и покрытие – торт соберётся в 3D прямо на глазах. Разрежьте его, посмотрите состав и отправьте заказ в цех «Уфа Десерт».">
+<meta name="theme-color" content="#fffcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1618" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Соберите свой торт в 3D · Тортуфа">
+<meta property="og:description" content="Коржи, крем, начинка, хруст, покрытие – соберите торт и сразу увидите его в разрезе.">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<main id="main" class="wrap">
+
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Конструктор</p>
+      <h2>Соберите<br>свой торт</h2>
+    </div>
+    <p>Выбирайте из того, что цех правда кладёт в торты: коржи, кремы, конфитюры, хруст, покрытие. Торт собирается в 3D сразу – поверните его, разрежьте и отправьте состав в цех.</p>
+  </div>
+
+  <div class="build">
+
+    <div class="build__stage">
+      <div class="build__3d">
+        <div class="cake3d">
+          <canvas data-cake aria-label="Ваш торт в 3D: потяните, чтобы повернуть, нажмите, чтобы разрезать"></canvas>
+          <button class="cake3d__cut" data-cut aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 14 6l4 4L7 21l-4-4Z"/><path d="M14 6l2-3 5 5-3 2"/></svg>
+            <span>Разрезать</span>
+          </button>
+          <p class="cake3d__hint">Потяните, чтобы повернуть</p>
+          <p class="cake3d__read" data-read></p>
+        </div>
+      </div>
+      <p class="build__facts" data-facts aria-live="polite"></p>
+      <div class="build__xs" data-xs></div>
+    </div>
+
+    <div class="build__panel">
+
+      <section class="build__group">
+        <h3 class="build__h">Размер</h3>
+        <div class="build__opts" data-sizes role="group" aria-label="Размер торта"></div>
+      </section>
+
+      <div data-slots></div>
+
+      <section class="build__sum" data-summary aria-live="polite"></section>
+
+    </div>
+  </div>
+
+</main>
+<script type="module" src="js/page-konstruktor.js"></script>
+</body>
+</html>

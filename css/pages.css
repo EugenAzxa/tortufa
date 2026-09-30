@@ -251,3 +251,113 @@
   .lab__list { max-height: 52vh; }
   .lab__info img { max-width: 260px; justify-self: center; }
 }
+
+/* ------------------------------------------------------ конструктор */
+.build { display: grid; gap: clamp(1rem, 3vw, 2rem); align-items: start; padding-bottom: 3rem; }
+.build__stage { display: grid; gap: 1rem; }
+.build__3d {
+  min-height: 300px; border-radius: var(--r-lg); border: 1px solid var(--line);
+  background: linear-gradient(170deg, var(--paper-2), var(--paper-3)); position: relative;
+}
+.build__xs {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: clamp(0.75rem, 2.5vw, 1.5rem);
+}
+.build__panel { display: grid; gap: clamp(1.25rem, 3vw, 2rem); align-content: start; }
+
+@media (min-width: 1040px) {
+  .build { grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); }
+  .build__stage { position: sticky; top: 92px; }
+  .build__3d { min-height: 380px; }
+}
+/* On a phone the cake pins to the top so you see every choice land. */
+@media (max-width: 1039px) {
+  .build__3d {
+    position: sticky; top: 64px; z-index: 30; min-height: 230px;
+    box-shadow: 0 14px 22px -20px rgba(52, 45, 49, 0.5);
+  }
+}
+
+.build__group { display: grid; gap: 0.7rem; }
+.build__h {
+  font-family: var(--sans); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink); display: flex; flex-wrap: wrap;
+  align-items: baseline; gap: 0.5rem 0.75rem;
+}
+.build__hint { font-weight: 500; letter-spacing: 0.04em; text-transform: none; color: var(--ink-3); font-size: 0.75rem; }
+.build__opts { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.opt {
+  display: inline-flex; align-items: center; gap: 0.45rem; min-height: 38px;
+  padding: 0.4rem 0.8rem; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); font-size: 0.8125rem; color: var(--ink-2); text-align: left;
+  transition: border-color 0.18s, background 0.18s, color 0.18s, transform 0.18s var(--ease);
+}
+.opt:hover { border-color: var(--ink-3); color: var(--ink); }
+.opt:active { transform: scale(0.97); }
+.opt i { width: 13px; height: 13px; border-radius: 4px; flex: none; border: 1px solid var(--line); }
+.opt[aria-pressed="true"] {
+  background: var(--ink); border-color: var(--ink); color: var(--paper); font-weight: 500;
+}
+.opt[aria-pressed="true"] i { border-color: rgba(255, 255, 255, 0.45); }
+
+.opt--size { flex-direction: column; align-items: flex-start; gap: 0.1rem; min-width: 8.5rem; border-radius: var(--r); padding: 0.7rem 0.9rem; }
+.opt--size b { font-size: 0.9375rem; font-weight: 600; }
+.opt--size span { font-size: 0.8125rem; }
+.opt--size em { font-style: normal; font-size: 0.6875rem; color: var(--ink-3); }
+.opt--size[aria-pressed="true"] em { color: color-mix(in srgb, var(--paper) 70%, transparent); }
+
+.build__sum {
+  display: grid; gap: 1rem; background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r-lg); padding: clamp(1rem, 3vw, 1.5rem);
+}
+.build__recipe { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; font-size: 0.9375rem; }
+.build__recipe li { padding-bottom: 0.35rem; border-bottom: 1px solid var(--line-2); }
+.build__recipe li:last-child { border-bottom: 0; color: var(--ink-2); }
+
+.build__price { display: grid; gap: 0.15rem; border-top: 1px solid var(--line); padding-top: 0.9rem; }
+.build__price b { font-family: var(--display); font-size: clamp(1.5rem, 5vw, 2.125rem); letter-spacing: -0.02em; line-height: 1; }
+.build__note { font-size: 0.75rem; color: var(--ink-3); }
+
+.build__near ul { list-style: none; padding: 0.6rem 0 0; margin: 0; display: grid; gap: 0.5rem; }
+.build__near li { display: grid; gap: 0.1rem; }
+.build__near a { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; font-size: 0.875rem; }
+.build__near a:hover span { color: var(--berry); }
+.build__near em { font-style: normal; font-size: 0.6875rem; color: var(--ink-3); }
+
+.build__acts { display: grid; gap: 0.5rem; }
+
+.build__facts {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.15rem 0.5rem;
+  font-size: 0.9375rem; color: var(--ink-2);
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 0.6rem 0.9rem;
+}
+.build__facts b { color: var(--ink); font-weight: 600; }
+.build__facts span { font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+.opt--more { border-style: dashed; color: var(--berry); font-weight: 600; }
+.opt--more:hover { border-color: var(--berry); color: var(--berry); }
+
+/* ------------------------------------------------------ промо конструктора */
+.promo {
+  display: grid; gap: clamp(1rem, 3vw, 2rem); align-items: center;
+  background: linear-gradient(150deg, var(--paper-2), var(--paper-3));
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: clamp(1.25rem, 4vw, 2.75rem); overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.3s, transform 0.3s var(--ease);
+}
+.promo:hover { border-color: var(--berry); box-shadow: var(--shadow); transform: translateY(-2px); }
+.promo h3 { font-size: clamp(1.75rem, 5vw, 3rem); padding-block: 0.35rem 0.6rem; }
+.promo__text p { color: var(--ink-2); max-width: min(44ch, 100%); }
+.promo__cta {
+  display: inline-flex; align-items: center; gap: 0.5em; margin-top: 1.25rem;
+  font-weight: 600; color: var(--berry);
+}
+.promo__cta svg { width: 18px; height: 18px; transition: transform 0.25s var(--ease); }
+.promo:hover .promo__cta svg { transform: translateX(4px); }
+.promo__cake { min-height: 220px; position: relative; }
+.promo__cake canvas { width: 100%; height: 100%; pointer-events: none; }
+@media (min-width: 820px) {
+  .promo { grid-template-columns: 1fr 0.85fr; }
+  .promo__cake { min-height: 280px; }
+}

@@ -35,7 +35,7 @@ if (!i) {
       </div>
       ${inside ? `<div class="prod__3d"><div class="cake3d">
         <canvas data-cake aria-label="Трёхмерный торт: потяните, чтобы повернуть, нажмите, чтобы разрезать"></canvas>
-        <p class="cake3d__hint">Потяните — повернётся · Нажмите — разрежется</p>
+        <p class="cake3d__hint">Потяните – повернётся · Нажмите – разрежется</p>
         <p class="cake3d__read" data-read></p>
       </div></div>` : ''}
     </div>
@@ -75,7 +75,7 @@ if (!i) {
         <div class="profile" data-profile></div>
       </div>` : ''}
 
-      <p class="meta">Состав и вес — по карточке товара на <a href="${i.url}" target="_blank" rel="noopener" style="border-bottom:1px solid currentColor">tortufa.ru</a></p>
+      <p class="meta">Состав и вес – по карточке товара на <a href="${i.url}" target="_blank" rel="noopener" style="border-bottom:1px solid currentColor">tortufa.ru</a></p>
     </div>
   </div>
 
@@ -83,7 +83,7 @@ if (!i) {
   <section>
     <div class="sec-head">
       <div><p class="kicker">Разрез</p><h2>Что внутри</h2></div>
-      <p>Каждая полоса — то, что кондитер реально кладёт в этот торт. Наведите на слой.</p>
+      <p>Каждая полоса – то, что кондитер реально кладёт в этот торт. Наведите на слой.</p>
     </div>
     <div class="cut-feature__xs" data-xs></div>
   </section>` : ''}
@@ -138,7 +138,7 @@ if (!i) {
   document.querySelector('[data-plus]').onclick = () => { qty = Math.min(99, qty + 1); qtyEl.textContent = qty }
   document.querySelector('[data-buy]').onclick = () => {
     basket.add(i.slug, qty)
-    toast(`${i.title || i.name} — ${qty} шт. в корзине`)
+    toast(`${i.title || i.name} – ${qty} шт. в корзине`)
   }
 
   /* ---------------- neighbours ---------------- */

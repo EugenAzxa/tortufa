@@ -336,7 +336,9 @@ export function renderSection(host, item, opts = {}) {
   // ---------------------------------------------------------- mount + wiring
   host.innerHTML = ''
   const frame = document.createElement('div')
-  frame.className = 'xs'
+  // without the annotation column the drawing is only ~280 units wide, so in a wide
+  // container it would scale up to something enormous. Cap it.
+  frame.className = annotate ? 'xs' : 'xs xs--plain'
   frame.append(svg)
   host.append(frame)
 

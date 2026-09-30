@@ -300,3 +300,7 @@
 .sk--wide { aspect-ratio: 16 / 9; }
 @keyframes skShine { to { transform: translateX(100%); } }
 @media (prefers-reduced-motion: reduce) { .sk::after { animation: none; } }
+
+/* A cross-section with no leader-line column is a narrow drawing; stop it blowing up
+   to fill a wide card. */
+.xs--plain .xs__svg { max-width: 420px; margin-inline: auto; }

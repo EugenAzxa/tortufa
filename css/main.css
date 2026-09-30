@@ -11,11 +11,17 @@
   --card: #fffaf1;
   --ink: #17120e;
   --ink-2: #584a3d;
-  --ink-3: #8d7c69;
+  /* 5.07:1 on paper — the old #8d7c69 measured 3.65 and failed AA for the small
+     meta text it is used on almost everywhere */
+  --ink-3: #746656;
   --berry: #a81236;
+  --on-berry: #fff;
   --berry-soft: #f3d9de;
+  /* --caramel and --pistachio are graphic tones (bars, pins, fills); --ok is their
+     text-safe counterpart, because neither clears 4.5:1 on cream */
   --caramel: #c9762f;
   --pistachio: #7f9c45;
+  --ok: #5a6f31;
   --cocoa: #3f2317;
   --line: rgba(23, 18, 14, 0.14);
   --line-2: rgba(23, 18, 14, 0.07);
@@ -40,11 +46,13 @@
     --card: #221b17;
     --ink: #f7ecdd;
     --ink-2: #c3b3a1;
-    --ink-3: #8d7c69;
+    --ink-3: #92816f;
     --berry: #ff6d8c;
+    --on-berry: #2a0f16;
     --berry-soft: #43222b;
     --caramel: #e8a75e;
     --pistachio: #b3cf74;
+    --ok: #b3cf74;
     --cocoa: #f2dfc7;
     --line: rgba(247, 236, 221, 0.16);
     --line-2: rgba(247, 236, 221, 0.08);
@@ -54,8 +62,10 @@
 }
 :root[data-theme="dark"] {
   --paper: #171210; --paper-2: #211a16; --paper-3: #2c231d; --card: #221b17;
-  --ink: #f7ecdd; --ink-2: #c3b3a1; --ink-3: #8d7c69;
-  --berry: #ff6d8c; --berry-soft: #43222b; --caramel: #e8a75e; --pistachio: #b3cf74; --cocoa: #f2dfc7;
+  --ink: #f7ecdd; --ink-2: #c3b3a1; --ink-3: #92816f;
+  --berry: #ff6d8c;
+    --on-berry: #2a0f16; --berry-soft: #43222b; --caramel: #e8a75e; --pistachio: #b3cf74;
+    --ok: #b3cf74; --cocoa: #f2dfc7;
   --line: rgba(247, 236, 221, 0.16); --line-2: rgba(247, 236, 221, 0.08);
   --shadow: 0 1px 2px rgba(0,0,0,.5), 0 14px 34px -14px rgba(0,0,0,.7);
   --shadow-lift: 0 2px 6px rgba(0,0,0,.55), 0 30px 64px -22px rgba(0,0,0,.8);
@@ -88,7 +98,7 @@ a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { background: none; border: 0; cursor: pointer; }
 :focus-visible { outline: 2.5px solid var(--berry); outline-offset: 3px; border-radius: 4px; }
-::selection { background: var(--berry); color: #fff; }
+::selection { background: var(--berry); color: var(--on-berry); }
 
 /* ---------------------------------------------------------------- type */
 h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 0.98; letter-spacing: -0.02em; }
@@ -154,7 +164,7 @@ section { position: relative; }
 .icon-btn[data-n]::after {
   content: attr(data-n); position: absolute; transform: translate(14px, -14px);
   min-width: 17px; height: 17px; padding: 0 4px; border-radius: 999px;
-  background: var(--berry); color: #fff; font-size: 0.625rem; font-weight: 700;
+  background: var(--berry); color: var(--on-berry); font-size: 0.625rem; font-weight: 700;
   display: grid; place-items: center; font-variant-numeric: tabular-nums;
 }
 .icon-btn { position: relative; }
@@ -194,7 +204,7 @@ section { position: relative; }
 }
 .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
 .btn:active { transform: translateY(0) scale(0.985); }
-.btn--berry { background: var(--berry); border-color: var(--berry); color: #fff; }
+.btn--berry { background: var(--berry); border-color: var(--berry); color: var(--on-berry); }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn--ghost:hover { border-color: var(--ink); background: var(--paper-2); }
 .btn--sm { padding: 0.6em 1.1em; font-size: 0.8125rem; }
@@ -218,7 +228,7 @@ button.chip:hover { border-color: var(--ink-3); color: var(--ink); }
 .tag--lenten { background: color-mix(in srgb, var(--pistachio) 22%, var(--card)); color: color-mix(in srgb, var(--pistachio) 70%, var(--ink)); }
 .tag--choco { background: color-mix(in srgb, var(--cocoa) 16%, var(--card)); color: color-mix(in srgb, var(--cocoa) 72%, var(--ink)); }
 .tag--fruit { background: var(--berry-soft); color: var(--berry); }
-.tag--sale { background: var(--berry); color: #fff; }
+.tag--sale { background: var(--berry); color: var(--on-berry); }
 
 /* ---------------------------------------------------------------- utility */
 .sr { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
@@ -226,3 +236,40 @@ button.chip:hover { border-color: var(--ink-3); color: var(--ink); }
 .scroll-x::-webkit-scrollbar { display: none; }
 .stack { display: grid; gap: var(--g, 1rem); }
 [hidden] { display: none !important; }
+
+/* ------------------------------------------------- touch & reduced motion */
+/* On a touch screen every control has to clear 44×44. Rather than fattening the
+   desktop UI, the small ones grow a transparent hit area from a pseudo-element, so
+   the design keeps its proportions and the thumb still lands. */
+@media (pointer: coarse) {
+  .icon-btn { width: 44px; height: 44px; }
+  .chip { min-height: 44px; padding-inline: 1rem; }
+  .chip--buy { width: 44px; height: 44px; }
+  .qty button { width: 44px; height: 44px; }
+  .nav a, .crumbs a, .foot-list a { display: inline-flex; align-items: center; min-height: 44px; }
+  .xs__legend li { min-height: 44px; }
+  .lab__list li button { min-height: 48px; }
+  .strip-item { min-height: 48px; }
+
+  /* map pins stay visually small but get a real thumb target around them */
+  .umap__pin { position: relative; }
+  .umap__pin::before {
+    content: ""; position: absolute; left: 50%; top: 50%;
+    width: 44px; height: 44px; transform: translate(-50%, -50%);
+  }
+  /* the label under a district is decoration; the shape itself is the target */
+  .umap__dlabel { pointer-events: none; }
+}
+
+/* Motion is a garnish here, never the only way something becomes visible or usable.
+   When the reader asks for less of it, drop it everywhere in one place. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover { transform: none; }
+  .strip-item:hover, .catstat:hover { padding-inline: 0; }
+}

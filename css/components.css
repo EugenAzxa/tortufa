@@ -131,7 +131,7 @@
 .card__price span { font-size: 0.6875rem; color: var(--ink-3); }
 .card__acts { display: flex; gap: 0.3rem; align-items: center; }
 .chip--buy { width: 32px; height: 32px; padding: 0; justify-content: center; font-size: 1.1rem; font-weight: 400; line-height: 1; }
-.chip--buy.is-hit { background: var(--berry); border-color: var(--berry); color: #fff; transform: scale(1.12); }
+.chip--buy.is-hit { background: var(--berry); border-color: var(--berry); color: var(--on-berry); transform: scale(1.12); }
 
 .stackchip { display: flex; flex-direction: column; height: var(--h, 34px); width: 100%; border-radius: 5px; overflow: hidden; border: 1px solid var(--line-2); }
 .stackchip i { display: block; width: 100%; min-height: 1.5px; }
@@ -257,3 +257,46 @@
 @media (min-width: 1000px) { .filters { top: 72px; } }
 
 .empty { padding: 4rem 0; text-align: center; color: var(--ink-3); }
+
+/* ------------------------------------------------------------ cut control */
+/* The canvas is tap-to-cut, which nobody can see. This button says it out loud —
+   and gives keyboard and screen-reader users the same door. */
+.cake3d__cut {
+  position: absolute; right: 0.85rem; top: 0.85rem; z-index: 2;
+  display: inline-flex; align-items: center; gap: 0.45em;
+  min-height: 40px; padding: 0.5em 1em; border-radius: 999px;
+  background: var(--ink); color: var(--paper);
+  font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01em;
+  box-shadow: var(--shadow); transition: transform 0.18s var(--ease), background 0.2s;
+}
+.cake3d__cut:hover { transform: translateY(-1px); }
+.cake3d__cut:active { transform: translateY(0) scale(0.97); }
+.cake3d__cut[aria-pressed="true"] { background: var(--berry); color: var(--on-berry); }
+.cake3d__cut svg {
+  width: 15px; height: 15px; flex: none; fill: none; stroke: currentColor;
+  stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+}
+@media (max-width: 480px) {
+  .cake3d__cut { right: 0.6rem; top: 0.6rem; padding: 0.5em 0.8em; font-size: 0.75rem; }
+}
+
+/* ------------------------------------------------------------ skeletons */
+/* Painted straight into the HTML so the first frame already has the right shape —
+   the grid never collapses and then jumps when the catalogue arrives. */
+.sk {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  position: relative;
+  overflow: hidden;
+}
+.sk::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 20%, color-mix(in srgb, var(--card) 70%, transparent) 50%, transparent 80%);
+  transform: translateX(-100%);
+  animation: skShine 1.5s ease-in-out infinite;
+}
+.sk--card { aspect-ratio: 4 / 3.35; }
+.sk--wide { aspect-ratio: 16 / 9; }
+@keyframes skShine { to { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { .sk::after { animation: none; } }

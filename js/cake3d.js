@@ -170,7 +170,8 @@ export class Cake3D {
   _loop(t) {
     const dt = Math.min(48, t - (this._t || t)); this._t = t
     if (Math.abs(this.cutTarget - this.cut) > 0.001) {
-      this.cut += (this.cutTarget - this.cut) * Math.min(1, dt / 190)
+      const still = matchMedia('(prefers-reduced-motion: reduce)').matches
+      this.cut = still ? this.cutTarget : this.cut + (this.cutTarget - this.cut) * Math.min(1, dt / 190)
       this.dirty = true
     }
     if (this.dragging) { /* user drives */ }

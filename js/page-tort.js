@@ -59,7 +59,7 @@ if (!i) {
           <button data-minus aria-label="Меньше">−</button><span data-qty>1</span><button data-plus aria-label="Больше">+</button>
         </div>
         <button class="btn btn--berry" data-buy>В корзину</button>
-        ${inside ? `<button class="btn btn--ghost" data-cut>Разрезать</button>` : ''}
+        ${inside ? `<button class="btn btn--ghost" data-cut aria-pressed="false">Разрезать</button>` : ''}
       </div>
 
       <dl class="spec">
@@ -116,8 +116,12 @@ if (!i) {
       read.textContent = e.detail ? `${e.detail.role}: ${e.detail.label}` : ''
       read.style.opacity = e.detail ? 1 : 0
     })
-    document.querySelector('[data-cut]')?.addEventListener('click', () => {
+    const cutBtn = document.querySelector('[data-cut]')
+    cutBtn?.addEventListener('click', () => {
       cake.toggleCut()
+      const open = cake.cutTarget > 0.5
+      cutBtn.setAttribute('aria-pressed', String(open))
+      cutBtn.textContent = open ? 'Собрать обратно' : 'Разрезать'
       document.querySelector('.prod__3d')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
     })
     const xs = document.querySelector('[data-xs]')

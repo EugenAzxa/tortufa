@@ -64,3 +64,40 @@ node tools/serve.mjs     # http://localhost:4173
 
 Rebuild data only when needed — see README. The OSM steps are rate-limited to 1 req/s and
 `data/ufa.json` is committed, so a fresh checkout needs no network.
+
+---
+
+## UI/UX pass (30 Sept 2026)
+
+Audited against the ui-ux-pro-max ruleset. What was actually wrong, and what changed:
+
+**Contrast — three real AA failures, measured not guessed.**
+- `--ink-3` was `#8d7c69`: **3.65:1** on cream. It carries nearly every piece of small
+  meta text on the site (prices per kilo, weights, captions, footer). Now `#746656` →
+  5.05:1. Dark mode `#92816f` → 4.95:1.
+- `--pistachio` as *text* was 2.83:1. It stays a graphic tone; text uses the new `--ok`
+  (`#5a6f31`, 5.38:1).
+- Dark mode put white on `--berry #ff6d8c` for every primary CTA: **2.69:1**. Added
+  `--on-berry` — white in light, `#2a0f16` in dark (6.63:1).
+
+**Touch targets.** `.chip--buy` (the + on every card) was 32×32, `.icon-btn` 40×40,
+`.qty` 38×38 — all under 44. A `@media (pointer: coarse)` block grows them, and map pins
+get a transparent 44×44 hit area from a pseudo-element so they keep their small look.
+
+**The cut was an invisible gesture.** Tapping the canvas cuts the cake, which nobody can
+guess. Every 3D cake now has an explicit «Разрезать» button that toggles label and
+`aria-pressed`, giving keyboard and screen-reader users the same door.
+
+**Reduced motion** is now handled in one global block rather than per-component, and the
+3D cut snaps instead of animating.
+
+**Map labels collided.** «Дёмский» sat underneath the «Дёма» pin and read as «мский».
+`map.js` now runs a declutter pass after layout: pins win (they carry the prices),
+district labels get nudged clear, and are hidden only if there is genuinely no room.
+
+**Skeletons** are painted into the HTML for the card grids, so the first frame has the
+right shape instead of collapsing and jumping when the catalogue lands.
+
+Design-system check confirmed the direction: pattern "Immersive/Interactive Experience",
+editorial serif + grotesque pairing. The recommended generic editorial palette (black +
+pink) was **not** adopted — cream and berry suit a bakery better and already pass AA.

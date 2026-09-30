@@ -46,7 +46,7 @@ const paint = async () => {
     <div class="bsum">
       <div class="bsum__row"><span>Позиций</span><b class="num">${lines.reduce((s, l) => s + l.n, 0)}</b></div>
       <div class="bsum__row"><span>Доставка</span><b>${free ? 'бесплатно' : `от ${m.delivery.zones[0].price} ₽`}</b></div>
-      ${disc ? `<div class="bsum__row" style="color:var(--pistachio)"><span>Скидка по акции цеха</span><b>−5%</b></div>` : ''}
+      ${disc ? `<div class="bsum__row" style="color:var(--ok)"><span>Скидка по акции цеха</span><b>−5%</b></div>` : ''}
       <div class="bsum__row bsum__row--total"><span>Итого</span><b class="num">${money(total)}</b></div>
       ${!free ? `<p class="meta">До бесплатной доставки — ${money(need)}</p>` : ''}
       <textarea data-text readonly aria-label="Текст заказа"></textarea>

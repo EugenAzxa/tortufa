@@ -302,7 +302,11 @@ export async function openInside(slug) {
     </div>
     <div class="inside__stage">
       <div class="cake3d"><canvas data-cake aria-label="Трёхмерный торт: потяните, чтобы повернуть, нажмите, чтобы разрезать"></canvas>
-        <p class="cake3d__hint">Потяните — повернётся. Нажмите — разрежется.</p>
+        <button class="cake3d__cut" data-cut aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 14 6l4 4L7 21l-4-4Z"/><path d="M14 6l2-3 5 5-3 2"/></svg>
+          <span>Разрезать</span>
+        </button>
+        <p class="cake3d__hint">Потяните, чтобы повернуть</p>
         <p class="cake3d__read" data-read></p>
       </div>
       <div class="inside__xs" data-xs></div>
@@ -322,6 +326,13 @@ export async function openInside(slug) {
     read.textContent = e.detail ? `${e.detail.role}: ${e.detail.label}` : ''
     read.style.opacity = e.detail ? 1 : 0
   })
+  const cutBtn = body.querySelector('[data-cut]')
+  cutBtn.onclick = () => {
+    cake3d.toggleCut()
+    const open = cake3d.cutTarget > 0.5
+    cutBtn.setAttribute('aria-pressed', open)
+    cutBtn.querySelector('span').textContent = open ? 'Собрать обратно' : 'Разрезать'
+  }
   const xs = body.querySelector('[data-xs]')
   const draw = () => renderSection(xs, item)
   draw()

@@ -29,6 +29,17 @@ const xsEl = document.querySelector('[data-lab-xs]')
 const infoEl = document.querySelector('[data-lab-info]')
 const readEl = document.querySelector('[data-lab-read]')
 const cv = document.querySelector('[data-lab-cake]')
+const cutBtn = document.querySelector('[data-lab-cut]')
+
+// the canvas is tap-to-cut, but that affordance is invisible — mirror it in a button
+const paintCutBtn = () => {
+  const open = !!cake && cake.cutTarget > 0.5
+  cutBtn.setAttribute('aria-pressed', open)
+  cutBtn.querySelector('span').textContent = open ? 'Собрать обратно' : 'Разрезать'
+}
+cutBtn.addEventListener('click', () => { cake?.toggleCut(); paintCutBtn() })
+cv.addEventListener('pointerup', () => setTimeout(paintCutBtn, 0))
+cv.addEventListener('keyup', () => paintCutBtn())
 
 fEl.innerHTML = GROUPS.map((g) =>
   `<button class="chip" data-g="${g.key}" aria-pressed="${g.key === group}">${g.label}</button>`).join('')
@@ -105,6 +116,7 @@ const select = (slug, { push = true } = {}) => {
     b.setAttribute('aria-current', b.dataset.pick === slug))
   cake?.destroy()
   cake = new Cake3D(cv, i, { open: false })
+  paintCutBtn()
   drawXs()
   paintInfo(i)
   if (push) history.replaceState(null, '', `?c=${encodeURIComponent(slug)}`)

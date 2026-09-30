@@ -95,6 +95,33 @@ export function renderMap(host, data, opts = {}) {
   place(shop, data.shop.xy)
   layer.append(shop)
 
+  // ------------------------------------------------------ declutter
+  // District names and neighbourhood pins are laid out from two different sources and
+  // happily land on top of each other (Дёмский vs the Дёма pin). Pins carry the prices,
+  // so they win: nudge each district label clear, and drop it if there is no room.
+  const declutter = () => {
+    const pinRects = [...layer.querySelectorAll('.umap__pin, .umap__shop')].map((n) => n.getBoundingClientRect())
+    if (!pinRects.length) return
+    const hits = (r) => pinRects.some((p) =>
+      r.left < p.right + 4 && r.right > p.left - 4 && r.top < p.bottom + 2 && r.bottom > p.top - 2)
+    for (const label of layer.querySelectorAll('.umap__dlabel')) {
+      label.style.removeProperty('margin-top')
+      label.hidden = false
+      if (!hits(label.getBoundingClientRect())) continue
+      let placed = false
+      for (const dy of [-22, 22, -40, 40, -58, 58]) {
+        label.style.marginTop = dy + 'px'
+        if (!hits(label.getBoundingClientRect())) { placed = true; break }
+      }
+      if (!placed) { label.style.removeProperty('margin-top'); label.hidden = true }
+    }
+  }
+  if (labels && pins) {
+    requestAnimationFrame(declutter)
+    const ro = new ResizeObserver(() => requestAnimationFrame(declutter))
+    ro.observe(host)
+  }
+
   // ------------------------------------------------------ interaction
   const api = { svg, layer, nodes, select: () => {} }
   if (!interactive) return api

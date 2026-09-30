@@ -106,7 +106,7 @@
 .zone-list li b { font-weight: 700; }
 .zone-list li.is-on { background: var(--paper-2); }
 .zone-list__free { --tone: var(--pistachio); }
-.zone-list__free b { color: var(--pistachio); }
+.zone-list__free b { color: var(--ok); }
 
 .map-teaser { display: grid; gap: clamp(1rem, 3vw, 2rem); align-items: center; }
 .map-teaser__map { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(0.75rem, 2vw, 1.5rem); }
@@ -192,7 +192,7 @@
 .calc__in input { flex: 1; border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem; background: var(--paper); font-variant-numeric: tabular-nums; }
 .calc__out { font-size: 0.9375rem; }
 .calc__out b { color: var(--berry); }
-.calc__out.is-free b { color: var(--pistachio); }
+.calc__out.is-free b { color: var(--ok); }
 
 /* ------------------------------------------------------ map page */
 .map-page { display: grid; gap: clamp(1rem, 3vw, 2rem); align-items: start; padding-bottom: 2rem; }

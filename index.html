@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тортуфа — сладкий журнал о том, что внутри торта · Уфа Десерт</title>
+<meta name="description" content="Журнал о тортах кондитерского цеха «Уфа Десерт». 42 торта в разрезе: нажмите на торт и посмотрите, что внутри — слой за слоем. Интерактивная карта доставки по Уфе.">
+<meta name="theme-color" content="#fbf3e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171210" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Тортуфа — сладкий журнал о том, что внутри торта">
+<meta property="og:description" content="Нажмите на торт — и он разрежется. 42 торта, настоящие составы, слой за слоем. Доставка по Уфе.">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__row">
+    <span>Выпуск №01 · Разрез<span>Полный цикл в своём цеху</span><span>Без глубокой заморозки</span><span>Более 100 наименований</span><span>Доставка по Уфе с 8:00</span><span>Бесплатно от 1000 ₽</span></span>
+    <span>Выпуск №01 · Разрез<span>Полный цикл в своём цеху</span><span>Без глубокой заморозки</span><span>Более 100 наименований</span><span>Доставка по Уфе с 8:00</span><span>Бесплатно от 1000 ₽</span></span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ------------------------------------------------------------ cover -->
+<section class="cover wrap">
+  <div class="cover__top">
+    <span class="cover__issue">Выпуск №01 · Уфа</span>
+    <span class="cover__issue">Сладкий журнал кондитерского цеха «Уфа&nbsp;Десерт»</span>
+  </div>
+  <h1>Что <em>внутри</em><br>торта</h1>
+  <div class="cover__sub">
+    <p class="lede">Мы разрезали весь каталог. Каждый торт здесь показан слоями — теми самыми, что закладывает кондитер: бисквит, крем, конфитюр, хруст. Нажмите на любой — он откроется.</p>
+    <div class="cover__cta">
+      <a class="btn btn--berry" href="razrez.html">Разрезать торт<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 14 6l4 4L7 21l-4-4Z"/><path d="M14 6l2-3 5 5-3 2"/></svg></a>
+      <a class="btn btn--ghost" href="catalog.html">Вся витрина</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero__stage">
+      <div class="cake3d">
+        <canvas data-hero-cake aria-label="Трёхмерный торт: потяните, чтобы повернуть, нажмите, чтобы разрезать"></canvas>
+        <p class="cake3d__hint">Потяните — повернётся · Нажмите — разрежется</p>
+        <p class="cake3d__read" data-hero-read></p>
+      </div>
+    </div>
+    <div class="hero__facts" data-hero-facts></div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ numbers -->
+<section class="wrap">
+  <div class="numbers" data-rise>
+    <div><b class="num" data-countup="158">158</b><span>позиций в каталоге — от бенто-торта до пирога на компанию</span></div>
+    <div><b class="num" data-countup="42">42</b><span>торта, разобранных на слои и показанных в разрезе</span></div>
+    <div><b class="num">7</b><span>районов Уфы с доставкой — и пригороды</span></div>
+    <div><b>0</b><span>глубокой заморозки: цех работает полным циклом</span></div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ cut of the week -->
+<section class="wrap" id="razrez-nedeli">
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Разрез недели</p>
+      <h2 data-cut-title>—</h2>
+    </div>
+    <p data-cut-sub></p>
+  </div>
+  <div class="cut-feature">
+    <div class="cut-feature__xs" data-cut-xs></div>
+    <aside class="cut-feature__side" data-cut-side></aside>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ cakes grid -->
+<section class="wrap" id="vitrina">
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Витрина</p>
+      <h2>Торты, которые<br>можно разрезать</h2>
+    </div>
+    <p>Нажмите «Внутри» — торт повернётся, разрежется и покажет свой настоящий состав. Данные о составе и весе взяты из каталога цеха.</p>
+  </div>
+  <div class="filters">
+    <div class="filters__row" data-cake-filters></div>
+  </div>
+  <div class="grid grid--wide" data-cake-grid></div>
+  <p style="padding-top:2rem"><a class="btn btn--ghost" href="catalog.html">Смотреть все 158 позиций</a></p>
+</section>
+
+<!-- ------------------------------------------------------------ lenten -->
+<section class="wrap">
+  <div class="feature" data-rise>
+    <div class="feature__shot" data-lenten-shot></div>
+    <div>
+      <p class="kicker">Постная полка</p>
+      <h3>Без яиц и молока — но всё ещё торт</h3>
+      <p>В цехе есть отдельная линия постной продукции: бисквит без продуктов животного происхождения, растительные сливки, фруктово-ягодные наполнители с настоящими кусочками. В разрезе видно, что структура та же — коржи, крем, конфитюр.</p>
+      <p style="padding-top:1.25rem"><a class="btn btn--sm btn--ghost" href="catalog.html?tag=lenten">Постные торты и выпечка</a></p>
+      <div class="lenten-strip" data-lenten-strip></div>
+    </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ price per kilo -->
+<section class="wrap">
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Разбор</p>
+      <h2>Сколько стоит<br>килограмм радости</h2>
+    </div>
+    <p>Цена торта мало что говорит: бенто на 500 г и торт на 1,8 кг — разные вселенные. Мы пересчитали весь каталог тортов в рублях за килограмм.</p>
+  </div>
+  <div class="perkg" data-perkg></div>
+</section>
+
+<!-- ------------------------------------------------------------ quote -->
+<section class="wrap">
+  <hr class="rule rule--thick">
+  <blockquote class="quote" data-rise>
+    «Уфа десерт — это кондитерское производство полного цикла в собственном современном цеху. Мы продаём только то, что делаем сами».
+    <small>С сайта цеха · ул. Гагарина 25/1, Уфа</small>
+  </blockquote>
+  <hr class="rule">
+</section>
+
+<!-- ------------------------------------------------------------ map teaser -->
+<section class="wrap" id="dostavka">
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Доставка</p>
+      <h2>Уфа целиком —<br>и немного вокруг</h2>
+    </div>
+    <p>Семь районов, десять микрорайонов со своей ценой курьера, бесплатная доставка от 1000 ₽ и самовывоз. Карта построена по настоящим границам районов из OpenStreetMap.</p>
+  </div>
+  <div class="map-teaser" data-rise>
+    <div class="map-teaser__map" data-mini-map></div>
+    <div class="map-teaser__side">
+      <ul class="zone-list" data-zone-list></ul>
+      <a class="btn btn--wide" href="karta.html">Открыть карту доставки</a>
+    </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ tea -->
+<section class="wrap" id="k-chayu">
+  <div class="sec-head">
+    <div>
+      <p class="kicker">К чаю</p>
+      <h2>Чак-чак, баурсак<br>и всё остальное</h2>
+    </div>
+    <p>Национальная линия, пирожные, печенье, пряники, пироги и полуфабрикаты — то, что берут без повода.</p>
+  </div>
+  <div class="grid" data-tea-grid></div>
+</section>
+
+</main>
+
+<script type="module" src="js/page-index.js"></script>
+</body>
+</html>

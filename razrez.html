@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разрез — посмотрите, что внутри торта · Тортуфа</title>
+<meta name="description" content="Выберите торт и посмотрите его в разрезе: слои, крем, конфитюр, хруст. Поверните торт в 3D и разрежьте одним нажатием.">
+<meta name="theme-color" content="#fbf3e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171210" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<main id="main" class="wrap">
+
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Лаборатория</p>
+      <h2>Разрез</h2>
+    </div>
+    <p>Слева — всё, что можно разрезать. Потяните торт, чтобы повернуть; нажмите, чтобы разрезать. Наведите на слой — журнал подпишет, что это. Составы взяты из каталога цеха «Уфа&nbsp;Десерт».</p>
+  </div>
+
+  <div class="lab">
+    <aside class="lab__pick">
+      <div class="search lab__search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="Найти торт" data-lab-search aria-label="Поиск по названию">
+      </div>
+      <div class="scroll-x" data-lab-filters></div>
+      <ul class="lab__list" data-lab-list></ul>
+    </aside>
+
+    <div class="lab__stage">
+      <div class="lab__3d">
+        <div class="cake3d">
+          <canvas data-lab-cake aria-label="Трёхмерный торт: потяните, чтобы повернуть, нажмите, чтобы разрезать"></canvas>
+          <p class="cake3d__hint">Потяните — повернётся · Нажмите — разрежется</p>
+          <p class="cake3d__read" data-lab-read></p>
+        </div>
+      </div>
+      <div class="lab__xs" data-lab-xs></div>
+    </div>
+
+    <aside class="lab__info" data-lab-info></aside>
+  </div>
+
+</main>
+<script type="module" src="js/page-razrez.js"></script>
+</body>
+</html>

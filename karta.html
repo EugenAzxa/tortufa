@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карта доставки по Уфе · Тортуфа</title>
+<meta name="description" content="Интерактивная карта доставки тортов по Уфе: семь районов, цены курьера по микрорайонам, бесплатная доставка от 1000 ₽, самовывоз с Гагарина 25/1.">
+<meta name="theme-color" content="#fbf3e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171210" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<main id="main" class="wrap">
+
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Доставка</p>
+      <h2>Куда мы<br>довозим торт</h2>
+    </div>
+    <p>Нажмите на район или на точку — покажем стоимость курьера и условия. Границы районов — настоящие, из OpenStreetMap.</p>
+  </div>
+
+  <div class="map-page">
+    <div class="map-page__map" data-map></div>
+
+    <aside class="map-page__side">
+      <div class="map-panel" data-panel>
+        <p class="kicker">Выберите район</p>
+        <p style="color:var(--ink-2);font-size:.9375rem;padding-top:.5rem">Кликните по карте — здесь появятся цена курьера, условия и время доставки.</p>
+      </div>
+
+      <div class="calc">
+        <p class="kicker kicker--plain">Считаем доставку</p>
+        <div class="calc__in">
+          <input type="number" min="0" step="50" value="1200" data-calc-sum aria-label="Сумма заказа в рублях">
+          <span class="meta">₽ заказ</span>
+        </div>
+        <p class="calc__out" data-calc-out></p>
+      </div>
+
+      <ul class="zone-list" data-zones></ul>
+
+      <div class="deliv-facts" data-facts></div>
+    </aside>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <div><p class="kicker">Как это работает</p><h2>Три правила</h2></div>
+    </div>
+    <ol class="about-list" data-rules></ol>
+  </section>
+
+</main>
+<script type="module" src="js/page-karta.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+[
+ {
+  "id": 132,
+  "name": "8 марта",
+  "slug": "8-marta",
+  "parent": 0,
+  "count": 1,
+  "desc": "",
+  "image": null
+ },
+ {
+  "id": 124,
+  "name": "Выпечка под заказ за 3 дня",
+  "slug": "vypechka-pod-zakaz-za-3-dnya",
+  "parent": 127,
+  "count": 21,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-156-scaled.jpg"
+ },
+ {
+  "id": 49,
+  "name": "Готовые торты",
+  "slug": "torty",
+  "parent": 0,
+  "count": 40,
+  "desc": "Хотите побаловать себя нежным десертом или подобрать угощение для особого события? В каталоге «Уфа Десерт» вы можете купить готовые торты в Уфе – классические, современные, с оригинальным декором и разными начинками. Все изделия создаются в нашем кондитерском цехе из натуральных ингредиентов, без заморозки и консервантов. Выбирайте свой идеальный вариант и заказывайте с удобной доставкой!",
+  "image": "https://tortufa.ru/wp-content/uploads/2020/02/169.-min.jpg"
+ },
+ {
+  "id": 125,
+  "name": "Десерты на заказ",
+  "slug": "deserty-na-zakaz",
+  "parent": 127,
+  "count": 7,
+  "desc": "Наше «именное» лакомство &ndash; конечно же, авторские десерты! Это слоеные лакомства с неповторимыми вкусовыми сочетаниями, которые мы рады предложить нашим клиентам. Мы готовим с любовью, используя только свежие и натуральные ингредиенты и особенно заботясь о внешнем виде продукции, чтобы каждый кусочек приносил удовольствие. Хотите купить десерты на заказ в Уфе с доставкой? Обратиться к нам &ndash; лучший вариант!",
+  "image": "https://tortufa.ru/wp-content/uploads/2023/11/DSC0549-redakt.jpg"
+ },
+ {
+  "id": 127,
+  "name": "К чаю",
+  "slug": "k-chayu",
+  "parent": 0,
+  "count": 103,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2020/02/desert-pavlova-800-min.png"
+ },
+ {
+  "id": 27,
+  "name": "Кексы",
+  "slug": "keksy",
+  "parent": 127,
+  "count": 2,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-133-scaled.jpg"
+ },
+ {
+  "id": 126,
+  "name": "Куличи, Хлебобулочные изделия",
+  "slug": "hlebobulochnye-izdeliya",
+  "parent": 0,
+  "count": 1,
+  "desc": "Это особый символ праздника. В кондитерском цехе «Уфа Десерт» вы можете купить куличи, приготовленные по традиционным рецептам с любовью и вниманием к деталям. Они получаются воздушными, нежными и насыщенными. И, конечно, не забываем освятить нашу продукцию!",
+  "image": "https://tortufa.ru/wp-content/uploads/2022/04/4de10d0f-fc97-45c2-b1a4-cc8030a1c97e.jpg"
+ },
+ {
+  "id": 25,
+  "name": "Печенье",
+  "slug": "pechene",
+  "parent": 127,
+  "count": 16,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2023/11/Ot-Dari-Dmitrovskoj-106-scaled.jpg"
+ },
+ {
+  "id": 29,
+  "name": "Пироги, пирожки",
+  "slug": "pirogi-pirozhki",
+  "parent": 127,
+  "count": 9,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2023/10/Ot-Dari-Dmitrovskoj-38-scaled.jpg"
+ },
+ {
+  "id": 26,
+  "name": "Пирожные",
+  "slug": "pirozhnye",
+  "parent": 127,
+  "count": 35,
+  "desc": "Наши сладости украсят любое торжество, идеально подойдут для банкетов, уютных вечеринок, детских праздников или просто для тех, кто любит свежие и вкусные сладости! Вы можете купить пирожные на заказ в «Уфа Десерт»: мы готовим самые разные кондитерские изделия с большим вниманием к рецептуре и оформлению. Это касается и тортов, и других десертов: мы знаем, что ваши впечатления зависят не только от яркого вкуса, но и от яркого вида наших сладостей!",
+  "image": "https://tortufa.ru/wp-content/uploads/2019/07/UfaDessert-II-foto-ot-Dari-28-scaled.jpg"
+ },
+ {
+  "id": 19,
+  "name": "Под заказ за 3 дня",
+  "slug": "pod-zakaz-2-3-dnya",
+  "parent": 0,
+  "count": 3,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2020/02/168.-min.jpg"
+ },
+ {
+  "id": 28,
+  "name": "Полуфабрикаты",
+  "slug": "polufabrikaty",
+  "parent": 0,
+  "count": 5,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2020/02/testo-drozzevoe-800-min.png"
+ },
+ {
+  "id": 133,
+  "name": "Постная продукция",
+  "slug": "postnaya-productia",
+  "parent": 0,
+  "count": 9,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2024/03/Ot-Dari-Dmitrovskoj-129-scaled.jpg"
+ },
+ {
+  "id": 56,
+  "name": "Пряники и карамель",
+  "slug": "pryaniki-i-karamel",
+  "parent": 127,
+  "count": 8,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2019/07/UfaDessert-II-foto-ot-Dari-33-scaled.jpg"
+ },
+ {
+  "id": 24,
+  "name": "Чак-Чак и баурсак",
+  "slug": "chak-chak-i-baursak",
+  "parent": 127,
+  "count": 10,
+  "desc": "Башкирская кухня славится своими уникальными сладостями. Хотите устроить застолье с национальным колоритом? Приобщиться к традиционным десертам? Купите чак-чак и баурсак в «Уфа Десерт»!",
+  "image": "https://tortufa.ru/wp-content/uploads/2023/04/Ot-Dari-Dmitrovskoj-102-scaled.jpg"
+ },
+ {
+  "id": 119,
+  "name": "Чак-Чак и Баурсак Заказной",
+  "slug": "chak-chak-i-baursak-zakaznoj",
+  "parent": 127,
+  "count": 3,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2019/07/UfaDessert-II-foto-ot-Dari-32-scaled.jpg"
+ },
+ {
+  "id": 30,
+  "name": "Шоколадные фигуры",
+  "slug": "shokoladnye-figury",
+  "parent": 0,
+  "count": 5,
+  "desc": "",
+  "image": "https://tortufa.ru/wp-content/uploads/2019/07/choco-kukla-800.png"
+ }
+]

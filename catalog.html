@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Витрина — весь каталог «Уфа Десерт» · Тортуфа</title>
+<meta name="description" content="Все 158 позиций кондитерского цеха «Уфа Десерт»: торты, пирожные, печенье, чак-чак, пироги, постная продукция. С фильтрами, ценой за килограмм и разрезом.">
+<meta name="theme-color" content="#fbf3e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171210" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<main id="main" class="wrap">
+
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Витрина</p>
+      <h2>Весь каталог</h2>
+    </div>
+    <p>Цены, вес и составы — из каталога цеха на tortufa.ru. У тортов и пирожных со значком «Разрез» можно заглянуть внутрь.</p>
+  </div>
+
+  <div class="filters">
+    <div style="display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="Найти по названию или составу" data-search aria-label="Поиск">
+      </div>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <label class="chip" style="cursor:pointer"><input type="checkbox" data-only-cut style="accent-color:var(--berry)"> Только с разрезом</label>
+        <select class="chip" data-sort aria-label="Сортировка" style="cursor:pointer">
+          <option value="pop">По умолчанию</option>
+          <option value="cheap">Сначала дешёвые</option>
+          <option value="dear">Сначала дорогие</option>
+          <option value="perkg">Выгоднее за кило</option>
+          <option value="heavy">Сначала большие</option>
+        </select>
+      </div>
+    </div>
+    <div class="filters__row" data-cats></div>
+    <div class="filters__row" data-tags></div>
+    <p class="filters__count" data-found></p>
+  </div>
+
+  <div class="grid grid--wide" data-grid></div>
+
+</main>
+<script type="module" src="js/page-catalog.js"></script>
+</body>
+</html>

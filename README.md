@@ -29,6 +29,11 @@ districts, straight from OpenStreetMap, projected to flat SVG at build time. Dis
 are tinted by delivery zone, neighbourhoods are pinned at their true coordinates, and
 every price is the one the workshop publishes. No tile server, no map library, no key.
 
+**Конструктор — build your own.** The ingredient palette is walked out of the catalogue,
+so you can only pick components the workshop actually uses, and `js/recipe.js` stacks
+them with the same rules the catalogue parser uses. The price is a range derived from
+what comparable cakes really cost per kilo, and it says so.
+
 **Витрина** — all 158 catalogue positions with filters, search, sort and price-per-kilo.
 **Корзина** — a basket in `localStorage` that composes a ready-to-send order for
 WhatsApp, the phone or the clipboard (there is no checkout backend).
@@ -48,6 +53,7 @@ because they are HTML on top of the SVG rather than text inside it.
 index.html        the cover — hero cake, разрез недели, витрина, ₽/kg, map teaser
 razrez.html       the lab: pick anything with an interior, spin it, cut it
 catalog.html      all 158 positions, filterable
+konstruktor.html  build your own cake: pick components, watch it stack in 3D
 tort.html?c=slug  one product: photo, 3D, cross-section, taste profile, neighbours
 karta.html        the delivery map
 basket.html       the order
@@ -61,6 +67,7 @@ js/app.js         shared shell: data, header/footer, theme, basket, cards, the r
 js/section.js     the annotated SVG cross-section
 js/cake3d.js      the spinnable, cuttable 3D cake
 js/map.js         the delivery map
+js/recipe.js      the assembly rules the constructor and the parser share
 js/page-*.js      one module per page
 
 data/catalog.json the 158 products with layer stacks, tags, taste profiles

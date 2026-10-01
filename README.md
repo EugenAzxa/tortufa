@@ -39,6 +39,9 @@ because they are HTML on top of the SVG rather than text inside it.
 
 ---
 
+> **Новая сессия?** Начните с [NOTES/03-START-HERE.md](NOTES/03-START-HERE.md) –
+> где что лежит, как запустить, что уже сделано и чего делать нельзя.
+
 ## Layout
 
 ```

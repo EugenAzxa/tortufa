@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оптовикам – торты и выпечка «Уфа Десерт» оптом · Тортуфа</title>
+<meta name="description" content="Оптовые поставки кондитерского цеха «Уфа Десерт» (ООО «Компания Дионис»), Уфа: торты, пирожные, чак-чак, печенье, кексы, полуфабрикаты. Сроки и условия хранения, заявка в отдел продаж.">
+<meta name="theme-color" content="#fdf8f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1618" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Оптовикам · «Уфа Десерт»">
+<meta property="og:description" content="Торты и выпечка цеха для магазинов, кафе и офисов. Заявка в отдел продаж за минуту.">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<main id="main" class="wrap">
+
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Оптовикам</p>
+      <h2>Торты цеха<br>в вашей витрине</h2>
+    </div>
+    <p>«Уфа Десерт» (ООО «Компания Дионис») – производство полного цикла в Уфе. Цех продаёт свою продукцию оптом: магазинам, кафе, офисам и сетям. Оптовый прайс и условия поставки высылает отдел продаж.</p>
+  </div>
+
+  <section class="opt-who" data-rise>
+    <div><b>Магазины</b><span>торты и пирожные в холодильную витрину, печенье и чак-чак на полку</span></div>
+    <div><b>Кафе и кофейни</b><span>пирожные и куски тортов к кофе, кексы, выпечка</span></div>
+    <div><b>Офисы и события</b><span>торты под заказ к дате, наборы пирожных, чак-чак</span></div>
+    <div><b>Пекарни и кулинарии</b><span>полуфабрикаты цеха: дрожжевое тесто, домашняя лапша, курник, вак-беляш</span></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div><p class="kicker">Ассортимент</p><h2>Что поставляет цех</h2></div>
+      <p>Разделы и условия хранения – из оптового прайса цеха. Цены в нём устарели, поэтому их здесь нет: актуальный прайс пришлёт отдел продаж. Число позиций – по витрине сегодня.</p>
+    </div>
+    <div class="opt-range" data-range></div>
+    <p class="opt-note">Есть национальная линейка (чак-чак, баурсак) и линейка халяль. Декларации и сертификаты на продукцию – на <a href="https://tortufa.ru/about/" target="_blank" rel="noopener">странице цеха</a>.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div><p class="kicker">Как начать</p><h2>Три шага</h2></div>
+    </div>
+    <ol class="about-list">
+      <li><b>1</b><span>Оставьте заявку ниже или позвоните в отдел продаж – расскажите, что у вас за точка и что хотите возить.</span></li>
+      <li><b>2</b><span>Менеджер пришлёт актуальный оптовый прайс и условия: минимальную партию, график и доставку.</span></li>
+      <li><b>3</b><span>Первая поставка. Цех работает без глубокой заморозки: торты и пирожные хранятся 120 часов при +4 ± 2 °C, так что заказывать лучше под продажи ближайших дней.</span></li>
+    </ol>
+  </section>
+
+  <section class="opt-form-wrap" id="zayavka">
+    <form class="opt-form" data-form novalidate>
+      <div class="sec-head" style="padding:0">
+        <div><p class="kicker">Заявка</p><h2>Запросить прайс</h2></div>
+      </div>
+      <div class="opt-grid">
+        <label><span>Компания или точка</span><input name="company" autocomplete="organization" placeholder="Кофейня «Утро», ТЦ «Аркада»"></label>
+        <label><span>Как к вам обращаться</span><input name="name" autocomplete="name" placeholder="Имя"></label>
+        <label><span>Телефон</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00" required></label>
+        <label><span>Город</span><input name="city" autocomplete="address-level2" value="Уфа"></label>
+      </div>
+      <fieldset>
+        <legend>Кто вы</legend>
+        <div class="opt-chips" data-kind></div>
+      </fieldset>
+      <fieldset>
+        <legend>Что интересует</legend>
+        <div class="opt-chips" data-want></div>
+      </fieldset>
+      <label><span>Комментарий</span><textarea name="note" rows="3" placeholder="Сколько точек, какие объёмы, когда нужна первая поставка"></textarea></label>
+      <p class="opt-err" data-err hidden>Оставьте телефон – по нему перезвонит отдел продаж.</p>
+      <div class="opt-send">
+        <button class="btn btn--berry" type="submit" data-via="wa">Отправить в WhatsApp</button>
+        <button class="btn btn--ghost" type="submit" data-via="mail">Отправить на почту</button>
+      </div>
+    </form>
+
+    <aside class="opt-contacts">
+      <p class="kicker kicker--plain">Отдел продаж</p>
+      <a href="tel:+79279605146">+7 (927) 960-51-46</a>
+      <a href="tel:+79279605153">+7 (927) 960-51-53</a>
+      <p class="kicker kicker--plain" style="padding-top:.75rem">Офис</p>
+      <a href="tel:+73472306003">+7 (347) 230-60-03</a>
+      <a href="mailto:info@tortufa.ru">info@tortufa.ru</a>
+      <p class="opt-req">ООО «Компания Дионис»<br>ИНН 0278066188 · КПП 027801001<br>ОГРН 1020203232500<br>Производство: Уфа, ул. Гагарина 25/1</p>
+    </aside>
+  </section>
+
+</main>
+<script type="module" src="js/page-opt.js"></script>
+</body>
+</html>

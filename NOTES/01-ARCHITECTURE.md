@@ -73,6 +73,15 @@ District labels and pins are **HTML positioned over** the SVG, not `<text>` insi
 that is what keeps them crisp and tappable at every size, and it is why `map.js` needs the
 viewBox origin (`VX`/`VY`) to convert user units to percentages.
 
+A pin is a zero-size anchor exactly on its place; the dot centres on it and the label
+hangs off one of eight sides. `layoutPins()` measures every side once, then picks per
+pin the side that touches no other label, dot or frame edge (greedy, then a few passes of
+every pin reconsidering), with a second ring a step further out plus a hairline back to
+the dot for when the city is too tight. District names are placed after, around the pins,
+and may only drift to a spot still inside their own district. Both rerun on resize and
+after the webfont lands; the first run is synchronous, because the cover keeps the main
+thread busy for a second and labels would sit piled up until it frees.
+
 Ufa's city relation trails a long southern tail; the viewBox deliberately stays at
 `0 0 1000 1520` (the full city) and `.umap__svg` clips with `overflow: hidden`.
 

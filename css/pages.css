@@ -66,11 +66,42 @@
 }
 .umap__dlabel.is-on { color: var(--ink); }
 
+/* A pin is a zero-size anchor on the exact spot: the dot centres on it, and map.js
+   picks which side the label hangs on (data-side) so neighbours never overlap. */
 .umap__pin, .umap__shop {
-  display: flex; align-items: center; gap: 0.35rem; border: 0; background: none;
+  width: 0; height: 0; padding: 0; border: 0; background: none;
   font: inherit; cursor: pointer; white-space: nowrap;
+  --o: 9px; --od: 7px; /* gap from the dot to the label: straight, diagonal */
 }
+.umap__pins > .umap__pin, .umap__pins > .umap__shop { transform: none; }
+.umap__pin > *, .umap__shop > * { position: absolute; left: 0; top: 0; }
+.umap__pins [data-far] { --o: 24px; --od: 17px; }
+.umap__pin span, .umap__shop span { translate: var(--o) -50%; }
+.umap__pins [data-side="l"] > span  { translate: calc(-100% - var(--o)) -50%; }
+.umap__pins [data-side="b"] > span  { translate: -50% var(--o); }
+.umap__pins [data-side="t"] > span  { translate: -50% calc(-100% - var(--o)); }
+.umap__pins [data-side="tr"] > span { translate: var(--od) calc(-100% - var(--od)); }
+.umap__pins [data-side="br"] > span { translate: var(--od) var(--od); }
+.umap__pins [data-side="tl"] > span { translate: calc(-100% - var(--od)) calc(-100% - var(--od)); }
+.umap__pins [data-side="bl"] > span { translate: calc(-100% - var(--od)) var(--od); }
+/* a label stepped out from its dot gets a hairline back to it, or it reads as the
+   neighbour's */
+.umap__pins [data-far]::after {
+  content: ""; position: absolute; left: 0; top: 0; width: 15px; height: 1px;
+  background: var(--ink-3); transform-origin: 0 50%;
+  transform: rotate(var(--a, 0deg)) translateX(6px);
+}
+.umap__pins [data-side="b"]  { --a: 90deg; }
+.umap__pins [data-side="l"]  { --a: 180deg; }
+.umap__pins [data-side="t"]  { --a: 270deg; }
+.umap__pins [data-side="br"] { --a: 45deg; }
+.umap__pins [data-side="bl"] { --a: 135deg; }
+.umap__pins [data-side="tl"] { --a: 225deg; }
+.umap__pins [data-side="tr"] { --a: 315deg; }
+.umap__pin:focus-visible { outline: none; }
+.umap__pin:focus-visible span { outline: 2px solid var(--ink); outline-offset: 1px; }
 .umap__pin i, .umap__shop i {
+  translate: -50% -50%;
   width: 11px; height: 11px; border-radius: 999px; flex: none;
   background: var(--tone, var(--berry)); border: 2px solid var(--paper);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--tone, var(--berry)) 55%, transparent);

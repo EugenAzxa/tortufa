@@ -48,20 +48,29 @@ function noise(kind) {
   g.fillStyle = '#808080'; g.fillRect(0, 0, n, n)
   const r = rng(kind.length * 97 + 13)
   if (kind === 'streak' || kind === 'tint') {
-    // a palette knife leaves long, soft, mostly horizontal strokes on frosting
-    g.fillStyle = kind === 'tint' ? '#f4f4f4' : '#808080'; g.fillRect(0, 0, n, n)
-    g.filter = 'blur(1.4px)'
+    // A palette knife leaves long, soft, mostly horizontal strokes on frosting. They are
+    // drawn on a 3×3 sheet, every stroke in all nine tiles, and the blur runs over the
+    // whole sheet; the middle tile then wraps onto itself with no seam on any edge.
+    const big = document.createElement('canvas')
+    big.width = big.height = n * 3
+    const b = big.getContext('2d')
+    b.fillStyle = kind === 'tint' ? '#f4f4f4' : '#808080'; b.fillRect(0, 0, n * 3, n * 3)
+    b.filter = 'blur(1.4px)'
     for (let i = 0; i < 160; i++) {
       const y = r() * n, x = r() * n, len = 40 + r() * 180, th = 1 + r() * 5
       const v = kind === 'tint' ? 225 + r() * 30 : 95 + r() * 75
-      g.strokeStyle = `rgba(${v},${v},${v},${0.25 + r() * 0.5})`
-      g.lineWidth = th
-      g.beginPath(); g.moveTo(x, y); g.bezierCurveTo(x + len / 3, y + (r() - 0.5) * 6, x + (2 * len) / 3, y + (r() - 0.5) * 6, x + len, y + (r() - 0.5) * 4)
-      g.stroke()
-      // wrap so the texture tiles without a seam
-      if (x + len > n) { g.save(); g.translate(-n, 0); g.stroke(); g.restore() }
+      const w1 = (r() - 0.5) * 6, w2 = (r() - 0.5) * 6, w3 = (r() - 0.5) * 4
+      b.strokeStyle = `rgba(${v},${v},${v},${0.25 + r() * 0.5})`
+      b.lineWidth = th
+      for (let tx = 0; tx < 3; tx++) for (let ty = 0; ty < 3; ty++) {
+        const ox = x + tx * n, oy = y + ty * n
+        b.beginPath(); b.moveTo(ox, oy); b.bezierCurveTo(ox + len / 3, oy + w1, ox + (2 * len) / 3, oy + w2, ox + len, oy + w3)
+        b.stroke()
+      }
     }
-    g.filter = 'none'
+    // strokes are shorter than a tile, so the middle one sees the same neighbours on
+    // every side: crop it
+    g.drawImage(big, n, n, n, n, 0, 0, n, n)
   }
   const dots = kind === 'pores' ? 2600 : kind === 'crumb' ? 1800 : kind === 'streak' || kind === 'tint' ? 0 : 900
   for (let i = 0; i < dots; i++) {

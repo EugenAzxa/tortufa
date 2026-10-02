@@ -147,3 +147,17 @@
   }
   .tapp__cut { right: 1.5rem; bottom: 1.5rem; }
 }
+
+/* the install offer and the discount it brings */
+.a-promo {
+  display: grid; gap: 0.5rem; padding: 0.9rem 1rem; border-radius: var(--r);
+  border: 1px dashed var(--berry); background: var(--berry-soft); color: var(--ink);
+}
+.a-promo b { font-size: 0.9375rem; }
+.a-promo span { font-size: 0.8125rem; color: var(--ink-2); }
+.a-promo .btn { min-height: 44px; justify-content: center; }
+.a-promo--on { border-style: solid; }
+.a-promo--on b { color: var(--berry); }
+.a-qr { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: center; }
+.a-qr img { border-radius: 10px; border: 1px solid var(--line); background: #fff; padding: 4px; }
+.a-price s { font-size: 0.875rem; color: var(--ink-3); }

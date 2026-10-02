@@ -1,6 +1,6 @@
 /* page-basket.js — the order list. There's no checkout backend, so the basket
    composes a ready-to-send order and hands it to the phone, WhatsApp or clipboard. */
-import { shell, catalog, basket, ufa, money, gram, esc, orderText, toast } from './app.js'
+import { shell, catalog, basket, ufa, money, gram, esc, orderText, toast, discountActive, markFirstOrder } from './app.js'
 
 shell('basket')
 const c = await catalog()
@@ -62,6 +62,8 @@ const paint = async () => {
   const text = orderText(lines, total)
   sumEl.querySelector('[data-text]').value = text
   sumEl.querySelector('[data-wa]').href = `https://wa.me/79677472114?text=${encodeURIComponent(text)}`
+  // the app's first-order code goes out once; sending the order uses it up
+  if (discountActive()) sumEl.querySelector('[data-wa]').addEventListener('click', markFirstOrder, { once: true })
   sumEl.querySelector('[data-copy]').onclick = async () => {
     try { await navigator.clipboard.writeText(text); toast('Заказ скопирован') }
     catch { sumEl.querySelector('[data-text]').select(); toast('Выделили – скопируйте вручную') }

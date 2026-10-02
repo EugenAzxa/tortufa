@@ -9,7 +9,8 @@
     "data": "node tools/scrape.mjs && node tools/fetch-images.mjs && node tools/build-data.mjs",
     "images": "node tools/fetch-images.mjs && node tools/build-data.mjs",
     "map": "node tools/build-map.mjs && node tools/build-zones.mjs",
-    "vendor": "esbuild tools/three-entry.mjs --bundle --minify --format=esm --legal-comments=eof --outfile=js/vendor/three.min.js"
+    "vendor": "esbuild tools/three-entry.mjs --bundle --minify --format=esm --legal-comments=eof --outfile=js/vendor/three.min.js",
+    "shops": "node tools/build-shops.mjs"
   },
   "engines": {
     "node": ">=18"
@@ -17,6 +18,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "esbuild": "^0.28.2",
+    "qrcode": "^1.5.4",
     "sharp": "^0.35.5",
     "three": "^0.186.1"
   }

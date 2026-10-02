@@ -8,9 +8,10 @@
 
    State lives in the address bar, so a built cake is a link; a draft is also kept on
    the device so closing the app does not lose it. */
-import { catalog, money, gram, esc, toast } from './app.js'
+import { catalog, money, gram, esc, toast, APP_DISCOUNT, isInstalled, discountActive, markFirstOrder, discountLine } from './app.js'
 import { SLOTS, SIZES, ingredients, assemble, asItem, estimate, encode, decode } from './recipe.js'
 import { Cake3D } from './cake3d.js'
+import { BERRIES, INKS, FONTS, IDEAS, MAX_TEXT } from './custom.js'
 
 document.documentElement.classList.add('js')
 try { const t = localStorage.getItem('tortufa.theme'); if (t) document.documentElement.dataset.theme = t } catch {}
@@ -19,26 +20,6 @@ if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catc
 const c = await catalog()
 const lib = ingredients(c)
 
-// berries the workshop bakes with (colours from its own catalogue lexicon)
-const BERRIES = [
-  { key: 'strawberry', label: 'Клубника', color: '#D9304A', shape: 'strawberry' },
-  { key: 'raspberry', label: 'Малина', color: '#C21E45', shape: 'raspberry' },
-  { key: 'cherry', label: 'Вишня', color: '#8E1B2C', shape: 'cherry' },
-  { key: 'currant', label: 'Смородина', color: '#4A1E3D', shape: 'currant' },
-]
-const INKS = [
-  { key: 'choco', label: 'Шоколад', color: '#4a2a1c' },
-  { key: 'berry', label: 'Малиновый', color: '#b0123f' },
-  { key: 'white', label: 'Белый', color: '#fffaf2' },
-  { key: 'gold', label: 'Золотой', color: '#c79a3b' },
-]
-const FONTS = [
-  { key: 'script', label: 'Прописью', css: '"Marck Script", cursive', style: '' },
-  { key: 'hand', label: 'От руки', css: '"Caveat", cursive', style: '600' },
-  { key: 'serif', label: 'Строго', css: '"Playfair Display", serif', style: 'italic 700' },
-]
-const IDEAS = ['С днём рождения!', 'Любимой маме', 'С юбилеем!', 'Поздравляем!', 'Спасибо!', 'С 8 Марта']
-const MAX_TEXT = 40
 
 /* ---------------------------------------------------------------- state */
 const SAVE = 'tortufa.app.v1'
@@ -204,10 +185,38 @@ const recipeLines = () => {
 
 const orderText = () => {
   const est = estimate(c, st.pick, size())
-  return `Здравствуйте! Хочу заказать торт, собранный в приложении Тортуфы:\n\n${recipeLines().join('\n')}\nВес: ${gram(size().grams)}\n\nОриентировочно ${money(est.low)} – ${money(est.high)} без учёта украшения и надписи.\nСсылка на торт: ${location.href}\n\nИмя:\nТелефон:\nДата:\nАдрес или самовывоз:`
+  return `Здравствуйте! Хочу заказать торт, собранный в приложении Тортуфы:\n\n${recipeLines().join('\n')}\nВес: ${gram(size().grams)}\n\nОриентировочно ${money(est.low)} – ${money(est.high)} без учёта украшения и надписи.${discountLine()}\nСсылка на торт: ${location.href}\n\nИмя:\nТелефон:\nДата:\nАдрес или самовывоз:`
+}
+
+// the text is built while the discount still applies, then the discount is spent
+const sendOrder = () => {
+  const text = orderText()
+  if (discountActive()) markFirstOrder()
+  return text
 }
 
 const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !navigator.standalone
+const wide = () => matchMedia('(min-width: 900px) and (pointer: fine)').matches
+const off = (n) => Math.round((n * (100 - APP_DISCOUNT.percent)) / 100)
+
+// The offer, in whichever form this device can act on: the code already in the order,
+// a real install button, the iPhone's Share route, or a QR code to take it to a phone.
+const promoHTML = () => {
+  if (discountActive()) {
+    return `<div class="a-promo a-promo--on"><b>−${APP_DISCOUNT.percent}% уже в заказе</b>
+      <span>Это первый заказ из приложения. Код ${APP_DISCOUNT.code} уйдёт в сообщении, цех сверит его по номеру телефона.</span></div>`
+  }
+  if (isInstalled()) return ''
+  const how = deferred
+    ? `<button class="btn btn--berry" data-install-now>Установить приложение</button>`
+    : isIOS
+      ? '<span>На iPhone: «Поделиться» → «На экран „Домой“». Откройте Тортуфу с главного экрана и отправьте заказ оттуда.</span>'
+      : wide()
+        ? `<div class="a-qr"><img src="assets/app-qr.svg" width="112" height="112" alt="QR-код: открыть приложение на телефоне">
+            <span>Наведите камеру телефона – приложение откроется там, его можно поставить на главный экран. В Chrome и Edge на компьютере – значок «Установить» в адресной строке.</span></div>`
+        : '<span>Меню браузера → «Установить приложение» или «На главный экран». Затем откройте Тортуфу оттуда.</span>'
+  return `<div class="a-promo"><b>Установите приложение – первый заказ на ${APP_DISCOUNT.percent}% дешевле</b>${how}</div>`
+}
 
 const paintPanel = () => {
   const s = STEPS[step]
@@ -248,20 +257,22 @@ const paintPanel = () => {
       </div></div>`
   } else {
     const est = estimate(c, st.pick, size())
+    const disc = discountActive()
     panelEl.innerHTML = head('Ваш торт', gram(size().grams)) + `<div class="a-sum">
       <ul>${recipeLines().map((l) => { const [k, ...v] = l.split(': '); return `<li><b>${esc(k)}:</b> ${esc(v.join(': '))}</li>` }).join('')}</ul>
       <div class="a-price">
         <span>Ориентировочно, без украшения и надписи</span>
-        <b class="num">${money(est.low)} – ${money(est.high)}</b>
+        ${disc ? `<s class="num">${money(est.low)} – ${money(est.high)}</s>` : ''}
+        <b class="num">${money(disc ? off(est.low) : est.low)} – ${money(disc ? off(est.high) : est.high)}</b>
         <span>${est.fromNeighbours ? `по ценам ${est.basedOn} похожих тортов цеха` : `по медиане каталога, ${est.perKg} ₽/кг`}</span>
       </div>
+      ${promoHTML()}
       <p class="a-note">Точную цену назовёт цех. Торты под заказ готовят 2–3 дня.</p>
       <div class="a-acts">
         <a class="btn btn--berry" data-wa target="_blank" rel="noopener">Заказать в WhatsApp</a>
         <button class="btn btn--ghost" data-share>${navigator.share ? 'Поделиться тортом' : 'Скопировать ссылку'}</button>
         <button class="btn btn--ghost" data-reset>Собрать заново</button>
       </div>
-      ${isIOS ? '<p class="a-note">Чтобы приложение было под рукой: «Поделиться» → «На экран „Домой“».</p>' : ''}
     </div>`
     panelEl.querySelector('[data-wa]').href = `https://wa.me/79677472114?text=${encodeURIComponent(orderText())}`
   }
@@ -326,6 +337,9 @@ document.addEventListener('click', async (e) => {
     return
   }
   if (t.hasAttribute('data-reset')) { st = fresh(); refresh(); return go(0) }
+  // the link already carries the code (it was built with the panel); sending spends it
+  if (t.hasAttribute('data-wa')) { sendOrder(); return }
+  if (t.hasAttribute('data-install-now')) { installBtn.click(); return }
 })
 
 panelEl.addEventListener('input', (e) => {
@@ -341,20 +355,24 @@ panelEl.addEventListener('input', (e) => {
 
 prevBtn.addEventListener('click', () => go(step - 1))
 nextBtn.addEventListener('click', () => {
-  if (step === STEPS.length - 1) { window.open(`https://wa.me/79677472114?text=${encodeURIComponent(orderText())}`, '_blank', 'noopener'); return }
+  if (step === STEPS.length - 1) { window.open(`https://wa.me/79677472114?text=${encodeURIComponent(sendOrder())}`, '_blank', 'noopener'); return }
   go(step + 1)
 })
 
 /* ---------------------------------------------------------------- install */
 const installBtn = document.querySelector('[data-install]')
 let deferred = null
-addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; installBtn.hidden = false })
+addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); deferred = e; installBtn.hidden = false
+  if (STEPS[step].key === 'done') paintPanel()   // the offer can now be a real button
+})
 installBtn.addEventListener('click', async () => {
   if (!deferred) return
   deferred.prompt()
   await deferred.userChoice.catch(() => {})
   deferred = null
   installBtn.hidden = true
+  if (STEPS[step].key === 'done') paintPanel()
 })
 addEventListener('appinstalled', () => { installBtn.hidden = true; toast('Тортуфа на главном экране') })
 

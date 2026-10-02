@@ -166,6 +166,21 @@ section { position: relative; }
 .nav a:hover { background: var(--paper-2); color: var(--ink); }
 .nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
 .head-actions { display: flex; align-items: center; gap: 0.5rem; }
+.nav a { padding-inline: 0.65rem; white-space: nowrap; }
+
+/* the app, with its first-order discount, is the one thing the header sells */
+.app-pill {
+  display: none; align-items: center; gap: 0.35rem; min-height: 40px; padding: 0 0.9rem; border-radius: 999px;
+  background: var(--berry); color: var(--on-berry); font-size: 0.8125rem; font-weight: 600; white-space: nowrap;
+}
+.app-pill b { background: var(--on-berry); color: var(--berry); border-radius: 999px; padding: 0.1em 0.45em; font-size: 0.75rem; }
+@media (min-width: 640px) { .app-pill { display: inline-flex; } }
+.drawer__app {
+  display: grid; gap: 0.2rem; margin: 0 var(--pad) 1rem; padding: 1rem 1.1rem; border-radius: var(--r);
+  background: var(--berry); color: var(--on-berry);
+}
+.drawer__app b { font-size: 1.0625rem; }
+.drawer__app span { font-size: 0.875rem; opacity: 0.9; }
 
 .icon-btn {
   width: 40px; height: 40px; display: grid; place-items: center; border-radius: 999px;
@@ -185,7 +200,8 @@ section { position: relative; }
 .icon-btn[data-n="0"]::after, .icon-btn:not([data-n])::after { display: none; }
 
 .burger { display: grid; }
-@media (min-width: 1000px) {
+/* eight sections and the app button need the room: below this the burger has them */
+@media (min-width: 1280px) {
   .nav { display: flex; }
   .burger { display: none; }
   .site-head__in { min-height: 72px; }

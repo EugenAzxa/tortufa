@@ -66,8 +66,10 @@ const NAV = [
   { href: 'razrez.html', label: 'Разрез', num: '02' },
   { href: 'catalog.html', label: 'Витрина', num: '03' },
   { href: 'konstruktor.html', label: 'Свой торт', num: '04' },
-  { href: 'karta.html', label: 'Доставка', num: '05' },
-  { href: 'about.html', label: 'Цех', num: '06' },
+  { href: 'gde-kupit.html', label: 'Где купить', num: '05' },
+  { href: 'karta.html', label: 'Доставка', num: '06' },
+  { href: 'opt.html', label: 'Оптовикам', num: '07' },
+  { href: 'about.html', label: 'Цех', num: '08' },
 ]
 
 const ICON = {
@@ -104,6 +106,7 @@ export function shell(page) {
     </a>
     <nav class="nav">${links('nav')}</nav>
     <div class="head-actions">
+      <a class="app-pill" href="app.html" title="Установите приложение – скидка 10% на первый заказ">Приложение <b>−10%</b></a>
       <button class="icon-btn" data-theme-toggle title="Сменить тему" aria-label="Сменить тему">${ICON.moon}</button>
       <a class="icon-btn" href="basket.html" data-basket-count data-n="0" title="Корзина">${ICON.basket}</a>
       <button class="icon-btn burger" data-drawer-open aria-label="Меню">${ICON.burger}</button>
@@ -115,6 +118,7 @@ export function shell(page) {
     <a class="logo" href="index.html"><b>Тортуфа</b><i>журнал</i></a>
     <button class="icon-btn" data-drawer-close style="margin-left:auto" aria-label="Закрыть">${ICON.close}</button>
   </div>
+  <a class="drawer__app" href="app.html"><b>Приложение «Свой торт»</b><span>Соберите торт с надписью. Установите приложение – и первый заказ на 10% дешевле</span></a>
   <nav>${links('drawer')}</nav>
   <div class="drawer__foot">
     <a href="tel:+79677472114">+7 (967) 747-21-14</a>
@@ -357,7 +361,25 @@ export const params = () => new URLSearchParams(location.search)
 
 export function orderText(lines, total) {
   const rows = lines.map((l) => `• ${l.item.name} – ${l.n} шт. × ${money(l.item.price)}`).join('\n')
-  return `Здравствуйте! Хочу заказать:\n${rows}\n\nИтого: ${money(total)}\n\nИмя:\nТелефон:\nАдрес / самовывоз:\nДата и время:`
+  return `Здравствуйте! Хочу заказать:\n${rows}\n\nИтого: ${money(total)}${discountLine()}\n\nИмя:\nТелефон:\nАдрес / самовывоз:\nДата и время:`
 }
+
+/* ------------------------------------------------------------ app discount */
+// Installing the app takes 10% off the first order sent from it. Only the workshop can
+// tell a first order (it checks the code against the phone number), so the site does
+// not promise more than the code: it shows the offer, adds the code to the first order
+// sent from the installed app, and stops offering it on this device after that.
+export const APP_DISCOUNT = { percent: 10, code: 'ПРИЛОЖЕНИЕ10' }
+const FIRST_ORDER = 'tortufa.app.firstOrder'
+export const isInstalled = () =>
+  matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: window-controls-overlay)').matches || navigator.standalone === true
+export const discountActive = () => {
+  if (!isInstalled()) return false
+  try { return !localStorage.getItem(FIRST_ORDER) } catch { return true }
+}
+export const markFirstOrder = () => { try { localStorage.setItem(FIRST_ORDER, new Date().toISOString()) } catch {} }
+export const discountLine = () => discountActive()
+  ? `\nПервый заказ из приложения Тортуфы: скидка ${APP_DISCOUNT.percent}%, код ${APP_DISCOUNT.code}`
+  : ''
 
 export { renderSection, renderStackChip, Cake3D }

@@ -6,9 +6,15 @@
   "type": "module",
   "scripts": {
     "dev": "node tools/serve.mjs",
-    "data": "node tools/scrape.mjs && node tools/build-data.mjs",
+    "data": "node tools/scrape.mjs && node tools/fetch-images.mjs && node tools/build-data.mjs",
+    "images": "node tools/fetch-images.mjs && node tools/build-data.mjs",
     "map": "node tools/build-map.mjs && node tools/build-zones.mjs"
   },
-  "engines": { "node": ">=18" },
-  "license": "UNLICENSED"
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
 }

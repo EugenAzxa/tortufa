@@ -1,0 +1,792 @@
+{
+ "baursak-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-100-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "chak-chak-03": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/CHak-chak-300gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "chak-chak-05": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/04/Ot-Dari-Dmitrovskoj-92-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "chak-chak-1kg": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/04/Ot-Dari-Dmitrovskoj-102-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "chak-chak-4": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-94-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "chak-chak-500": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/chak-chak-500.jpg",
+  "w": 683,
+  "h": 753
+ },
+ "chak-chak-gorka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/CHak-chak-suvenirnyj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "chak-chak-kuskovoi": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/chak-chak-kuskovoi.jpg",
+  "w": 683,
+  "h": 753
+ },
+ "chak-chak-suhoj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/CHak-chak-suhoj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "chak-chak-suhoj-025": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/Ot-Dari-Dmitrovskoj-90-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "chak-chak-svadebnyj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231101_170424435.jpg",
+  "w": 1080,
+  "h": 720
+ },
+ "chak-chak-zakaznoj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/08/56..jpg",
+  "w": 500,
+  "h": 500
+ },
+ "desert-fistashka-90gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/i-1.webp",
+  "w": 1138,
+  "h": 1500
+ },
+ "desert-klubnichka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Desert-klubnichka-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "desert-krasnyj-barhat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Desert-Krasnyj-barhat-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "desert-mango-120gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/i-4.webp",
+  "w": 1065,
+  "h": 1500
+ },
+ "desert-snikers": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Desert-Snikers-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "desert-tiramisu": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Desert-Tiramisu-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "desert-tropikanka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Desert-Tropikanka-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "gubadiya-sladkaya-350gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/1.-gubadiya-scaled.jpg",
+  "w": 1200,
+  "h": 790
+ },
+ "karamel-na-palochke-20-gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/Ot-Dari-Dmitrovskoj-142-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "karamel-na-palochke-czifry": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Karamel-na-palochke-czifry-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "karamel-na-palochke-pop-it": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Karamel-na-palochke-pop-it-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "karavaj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-156-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "kejkpops-bananovyj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/10/Ot-Dari-Dmitrovskoj-72-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "kejkpops-krasnyj-barhat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-71-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "keks-morkovnyj-025": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/10/Ot-Dari-Dmitrovskoj-134-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "keks-stolichnyj-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-133-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "kurnik": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Kurnik-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "kurnik-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Kurnik-polufabrikat-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "lapsha": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Lapsha-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "lapsha-so-shpinatom-200gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/03/63f08fc5-1e3b-497c-bb3a-c3042c7493eb-e1774881145331.webp",
+  "w": 1200,
+  "h": 839
+ },
+ "maffin-shokoladnyj-90gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/ot-dari-dmitrovskoj-140-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "maffin-vanilnyj-90gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/c2115fff-9b05-41af-a493-565edf1561-1.webp",
+  "w": 1059,
+  "h": 707
+ },
+ "maffin-zelenyj-barhat-90gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/ot-dari-dmitrovskoj-139-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "merenga-na-palochke": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/09/Ot-Dari-Dmitrovskoj-80-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pechene-assorti": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-assorti-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-domashnee-250": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/ot-dari-dmitrovskoj-103-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pechene-domashnee-4": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-domashnee-500-gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-gribochek-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-gribochek-250gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-gribochek-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-Gribochek-500gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-limonchik": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-Limonchik-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-pesochnoe-c-povidlom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-Pesochnoe-s-povidlom-250-gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-pesochnoe-c-povidlom-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-pesochnoe-s-povidlom-500gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-rogaliki": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/3.-Rogaliki-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-rogaliki-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-Rogaliki-600gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-sloenoe-slojka-s-abrikosom-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-153-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pechene-sloenoe-ushki": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-43-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pechene-sochni-s-tvorogom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Sochni-s-tvorogom-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-ufimskoe": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pechene-Ufimskoe-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pechene-ufimskoe-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/23.-Ufimskoe-05-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pir-molochnaya-devochka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Molochnaya-devochka-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pir-zavarnye-eklery": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/ot-dari-dmitrovskoj-111-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirog-pesochnyj-s-abrikosom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/11/Ot-Dari-Dmitrovskoj-58-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirog-pesochnyj-s-chyornoj-smorodinoj-kopirovat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/11/Ot-Dari-Dmitrovskoj-57-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirog-pesochnyj-s-limonom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/11/Ot-Dari-Dmitrovskoj-59-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirog-pesochnyj-s-limonom-kopirovat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/11/Ot-Dari-Dmitrovskoj-59-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirog-s-kapustoj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_091423798-e1696566368137.png",
+  "w": 936,
+  "h": 858
+ },
+ "pirog-s-konfityurom-abrikosovym": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_091621100-e1696566459421.png",
+  "w": 1026,
+  "h": 783
+ },
+ "pirog-s-konfityurom-smorodina": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_090645251-e1696566583173.png",
+  "w": 980,
+  "h": 812
+ },
+ "pirog-s-konfityurom-vishnevym": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_090509029-e1696566202254.png",
+  "w": 896,
+  "h": 750
+ },
+ "pirog-s-kuragoj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_085921300-e1696566783421.png",
+  "w": 915,
+  "h": 756
+ },
+ "pirog-s-kuriczej": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/154..jpg",
+  "w": 500,
+  "h": 500
+ },
+ "pirog-s-ryboj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_091759434-e1696566126899.png",
+  "w": 918,
+  "h": 880
+ },
+ "pirog-s-tvorogom-izyumom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_084823255-e1696566288950.png",
+  "w": 839,
+  "h": 753
+ },
+ "pirog-s-yablokami": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231006_091045806-e1696566515885.png",
+  "w": 939,
+  "h": 842
+ },
+ "pirozhnoe-assorti": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Assorti-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-biskvitnoe-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2021/06/Pirozhnoe-biskvitnoe-1-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-ezhik": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Ezhik-240gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-ezhik-pod-zakaz": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231101_163211599.png",
+  "w": 1080,
+  "h": 721
+ },
+ "pirozhnoe-kartoshka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Kartoshka-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-korzinochka-s-kremom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Korzinka-s-kremom-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-korzinochka-so-slivkami": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Korzinka-so-slivkami-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-krasnyj-velyur": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Krasnyj-velyur-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-medovoe": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/UfaDessert-II-foto-ot-Dari-4-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirozhnoe-muravejchik": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/i-3.webp",
+  "w": 1200,
+  "h": 1287
+ },
+ "pirozhnoe-nyam-nyam": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-nyam-nyam-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-persik": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-persik-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-persik-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Persik-600-gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-prazhskoe-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Prazhskoe-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-shkolnoe": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-SHkolnik-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-shkolnoe-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-45-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirozhnoe-sladkoezhka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/ot-dari-dmitrovskoj-131-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirozhnoe-tiramisu-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhnoe-Tiramisu-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhnoe-trubochka-so-slivkami": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Trubochka-so-slivkami-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhok-postnyj-s-kartofelem-i-gribami": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhok-postnyj-s-kartofelem-i-gribami-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhok-rzhanoj-s-yablokom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/10/Ot-Dari-Dmitrovskoj-39-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "pirozhok-s-kapustoj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhok-s-kapustoj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pirozhok-s-ryboj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/pir_riba_ris.jpg",
+  "w": 600,
+  "h": 450
+ },
+ "pirozhok-s-tvorogom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/pirozok-tvorog-800.png",
+  "w": 800,
+  "h": 533
+ },
+ "pirozhok-s-yablokom": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pirozhok-s-yablokom-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "plyushka-moskovskaya": {
+  "src": "https://tortufa.ru/wp-content/uploads/2020/04/plyushka-moskovskaya.jpg",
+  "w": 1024,
+  "h": 1024
+ },
+ "pryanik-bashkirskij-suvenir": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pryanik-Bashkirskij-suvenir-700gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pryanik-bashkirskij-suvenir-015": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/csc00757-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pryanik-bashkirskij-suvenir-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pryanik-Bashkirskkij-suvenir-400gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "pryanik-suvenirnyj-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Pryanik-imbirnyj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "raduzhnyj-rozhok-54gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/ufadessert-ii-foto-ot-dari-36-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "rom-baba": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Rom-baba-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "rulet-s-makom-glazirovanyj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Rulet-s-makom-glazirovannyj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "shokoladnaya-edinorog-kopirovat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2020/12/edinorog.jpg",
+  "w": 1024,
+  "h": 768
+ },
+ "shokoladnyj-mishka-s-serdczem": {
+  "src": "https://tortufa.ru/wp-content/uploads/2020/12/mishka-s-serdczem.jpg",
+  "w": 1024,
+  "h": 768
+ },
+ "shokoladnyj-olenenok": {
+  "src": "https://tortufa.ru/wp-content/uploads/2020/12/mishka-s-zajczem.jpg",
+  "w": 1024,
+  "h": 768
+ },
+ "shokoladnyj-olenenok-kopirovat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2020/12/olen.jpg",
+  "w": 1024,
+  "h": 768
+ },
+ "shokoladnyj-pop-it": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/Ot-Dari-Dmitrovskoj-148-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "sinnabon": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/i-5.webp",
+  "w": 1200,
+  "h": 1250
+ },
+ "tartaletki": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Tartaletki-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "testo-drozhzhevoe": {
+  "src": "https://tortufa.ru/wp-content/uploads/2020/02/testo-drozzevoe-800-min.png",
+  "w": 800,
+  "h": 533
+ },
+ "tort-alladin": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Alladin-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-apelsinovyj-vzryv": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Apelsinovyj-vzryv-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-bento-smetannyj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/love1.jpg",
+  "w": 600,
+  "h": 600
+ },
+ "tort-biskvitno-kremovyj-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-117-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-czyurih": {
+  "src": "https://tortufa.ru/wp-content/uploads/2020/08/i-7.webp",
+  "w": 1200,
+  "h": 1175
+ },
+ "tort-detskij-premium-shokoladnyj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Tort-detskij-premium-shokoladnyj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-detskij-tvorozhnyj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Detskij-tvorozhnyj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-fistashka-malina": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/fistashka-malina.jpg",
+  "w": 683,
+  "h": 753
+ },
+ "tort-hrizantema": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/i-8.webp",
+  "w": 1200,
+  "h": 1165
+ },
+ "tort-jogurtovyj-klubnika": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Jogurtovyj-klubnika-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-karamelka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/i-17.webp",
+  "w": 1200,
+  "h": 963
+ },
+ "tort-karamelka-12kg": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/03/tort-karamelka12.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-klubnichka-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2021/02/klubnichka1.jpg",
+  "w": 683,
+  "h": 696
+ },
+ "tort-krasnyj-barhat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/i-6.webp",
+  "w": 1200,
+  "h": 1182
+ },
+ "tort-landysh": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Landysh-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-leningradskij-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Leningrad-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-limonnyj-vzryv-1100gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/i-10.webp",
+  "w": 1200,
+  "h": 1168
+ },
+ "tort-malina-v-shokolade": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Malina-v-shokolade-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-medovyj-1350": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/04/medovii.jpg",
+  "w": 600,
+  "h": 600
+ },
+ "tort-medovyj-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Medovyj-900gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-ministerskij": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Ministerskij-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-molochnaya-devochka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Molochnaya-devochka-1-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-morskoj-briz-070": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/10/UfaDessert-II-foto-ot-Dari-27-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-muravejchik": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/Ot-Dari-Dmitrovskoj-123-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-muzhskoj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Muzhskoj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-napoleon-domashnij": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-132-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-napoleon-klassicheskij": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/UfaDessert-II-foto-ot-Dari-3-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-nezhnost": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/tNezhnost.jpg",
+  "w": 591,
+  "h": 576
+ },
+ "tort-ocharovanie-1850": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/08/i.webp",
+  "w": 1200,
+  "h": 1184
+ },
+ "tort-prazdnichnyj-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/ufadessert-ii-foto-ot-dari-6-1-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-prazhskij-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Prazhskij-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-premium-krasnyj-barhat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Polish_20231005_170029199-e1696509580796.png",
+  "w": 826,
+  "h": 831
+ },
+ "tort-premium-krasnyj-barhat-velyur": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/tort-krasnii-barhat-velur-800.png",
+  "w": 800,
+  "h": 533
+ },
+ "tort-ryzhik": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/12/Ryzhik-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-shokoladno-fruktovyj": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/SHokoladno-fruktovyj-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-smetannyj-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/i-9.webp",
+  "w": 1200,
+  "h": 1189
+ },
+ "tort-smetannyj-8-marta": {
+  "src": "https://tortufa.ru/wp-content/uploads/2021/03/tSmetannyj.jpeg",
+  "w": 960,
+  "h": 1280
+ },
+ "tort-smorodina-1350": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/08/tort-smorodina-2.jpg",
+  "w": 1200,
+  "h": 798
+ },
+ "tort-smorodinka-055": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Smorodinka-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-tropikanka": {
+  "src": "https://tortufa.ru/wp-content/uploads/2023/04/DSC0516-redakt-1.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tort-truhlyavyj-pen": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/tort-truhlyavyi-pen.jpg",
+  "w": 1200,
+  "h": 799
+ },
+ "tort-tryufel": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/i-16.webp",
+  "w": 1200,
+  "h": 1168
+ },
+ "tort-tryufel-3": {
+  "src": "https://tortufa.ru/wp-content/uploads/2022/03/Tryufel-700gr-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "tort-ufa-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/UFAdessert-18.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "tovary-dlya-prazdnika": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/sahar1.jpg",
+  "w": 683,
+  "h": 753
+ },
+ "vak-belyash-100-gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/csc00798-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "vak-belyash-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Vak-belyash-polufabrikat-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ },
+ "vozdushnoe-assorti": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/UfaDessert-II-foto-ot-Dari-37-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "vozdushnoe-assorti-stakan-50gr": {
+  "src": "https://tortufa.ru/wp-content/uploads/2026/04/ufadessert-ii-foto-ot-dari-35-scaled.jpg",
+  "w": 1200,
+  "h": 801
+ },
+ "vozdushnyj-polufabrikat": {
+  "src": "https://tortufa.ru/wp-content/uploads/2019/07/Ot-Dari-Dmitrovskoj-86-scaled-e1698057082628.jpg",
+  "w": 1200,
+  "h": 875
+ },
+ "zefir-na-palochke-2": {
+  "src": "https://tortufa.ru/wp-content/uploads/2025/05/Zefir-na-palochke-scaled.jpg",
+  "w": 1200,
+  "h": 1200
+ }
+}

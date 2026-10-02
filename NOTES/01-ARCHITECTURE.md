@@ -85,6 +85,16 @@ thread busy for a second and labels would sit piled up until it frees.
 Ufa's city relation trails a long southern tail; the viewBox deliberately stays at
 `0 0 1000 1520` (the full city) and `.umap__svg` clips with `overflow: hidden`.
 
+## Product photos
+
+The site does not hotlink tortufa.ru. `tools/fetch-images.mjs` downloads each product's
+original photo and writes `assets/products/<slug>-600.webp` (cards) and `-1200.webp`
+(the cake page), recording the source URL in `assets/products/sources.json`. On a rerun
+a product is fetched again only if its photo URL changed; products that left the
+catalogue lose their files. `build-data.mjs` emits local paths only when the manifest's
+source matches the product's current photo, and otherwise falls back to the shop's URL
+with a warning, so a stale fetch never shows the wrong cake.
+
 ## Conventions
 
 - Data is built once and committed. Pages only read JSON; nothing parses at runtime.

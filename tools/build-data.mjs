@@ -7,9 +7,10 @@ import { LEX, FRUITS } from './lexicon.mjs'
 const products = JSON.parse(await readFile('data/raw-products.json', 'utf8'))
 const categories = JSON.parse(await readFile('data/raw-categories.json', 'utf8'))
 
+// the magazine sets Russian text with the short dash, so the shop's long one is folded in
 const decode = (s = '') =>
   s.replace(/&#171;|&laquo;/g, '«').replace(/&#187;|&raquo;/g, '»')
-   .replace(/&#8211;/g, '–').replace(/&#8212;/g, '—').replace(/&amp;/g, '&')
+   .replace(/&#8211;|&#8212;|—/g, '–').replace(/&amp;/g, '&')
    .replace(/&quot;|&#34;/g, '"').replace(/&#039;|&#39;/g, "'").replace(/&nbsp;/g, ' ')
    .replace(/\s+/g, ' ').trim()
 
@@ -169,8 +170,16 @@ const cuttable = (name, short, cats) => {
 }
 
 const catBySlug = Object.fromEntries(categories.map((c) => [c.slug, c]))
-const pickImage = (img) => {
+// photos fetched by tools/fetch-images.mjs live in the repo; the shop's own server is
+// only the fallback for a product added since the last fetch
+const PHOTOS = JSON.parse(await readFile('assets/products/sources.json', 'utf8').catch(() => '{}'))
+const pickImage = (img, slug) => {
   if (!img) return null
+  const own = PHOTOS[slug]
+  if (own?.src === img.src) {
+    return { full: `assets/products/${slug}-1200.webp`, thumb: `assets/products/${slug}-600.webp`, w: own.w, h: own.h, orig: img.src }
+  }
+  console.warn(`photo not fetched yet, using tortufa.ru: ${slug}`)
   // prefer the ~1024px WordPress variant so the magazine stays fast
   const set = (img.srcset || '').split(',').map((s) => s.trim().split(' ')).filter((a) => a.length === 2)
       .map(([url, w]) => ({ url, w: parseInt(w, 10) })).sort((a, b) => a.w - b.w)
@@ -192,7 +201,7 @@ const items = products.map((p) => {
     if (!m) return null
     return m[2].toLowerCase().startsWith('час') ? `${m[1]} ч` : `${m[1]} сут`
   })()
-  const img = pickImage(p.images?.[0])
+  const img = pickImage(p.images?.[0], p.slug)
   const primary = p.cats[0]
   return {
     id: p.id,
@@ -230,7 +239,7 @@ await writeFile('data/catalog.json', JSON.stringify({
     legal: 'Кондитерский цех «Дионис»',
     city: 'Уфа',
     address: 'г. Уфа, ул. Гагарина 25/1',
-    hours: '8:00 — 20:00',
+    hours: '8:00 – 20:00',
     phones: ['+7 (967) 747-21-14', '+7 (927) 960-51-43'],
     email: 'info@tortufa.ru',
     site: 'https://tortufa.ru',

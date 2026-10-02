@@ -1,0 +1,19 @@
+{
+  "name": "Тортуфа – свой торт",
+  "short_name": "Тортуфа",
+  "description": "Соберите торт в 3D, напишите на нём своё и отправьте заказ в цех «Уфа Десерт».",
+  "lang": "ru",
+  "id": "app.html",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbeff0",
+  "theme_color": "#fffcfc",
+  "categories": ["food", "shopping"],
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Свой торт · Тортуфа</title>
+<meta name="description" content="Соберите торт в 3D: коржи, крем, начинка, покрытие, розочки и ягоды – и своя надпись сверху. Отправьте заказ в цех «Уфа Десерт» в один тап.">
+<meta name="theme-color" content="#fffcfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1618" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Свой торт с надписью · Тортуфа">
+<meta property="og:description" content="Соберите торт в 3D и напишите на нём что хотите – цех испечёт.">
+<meta property="og:locale" content="ru_RU">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Тортуфа">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Marck+Script&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="tapp">
+
+<header class="tapp__bar">
+  <a class="tapp__back" href="index.html" aria-label="В журнал">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </a>
+  <div class="tapp__title">
+    <b>Свой торт</b>
+    <span data-facts aria-live="polite"></span>
+  </div>
+  <button class="tapp__install" data-install hidden>Установить</button>
+</header>
+
+<main class="tapp__stage" id="main">
+  <div class="cake3d tapp__cake">
+    <canvas data-cake aria-label="Ваш торт: потяните, чтобы повернуть"></canvas>
+    <p class="cake3d__read" data-read></p>
+  </div>
+  <button class="tapp__cut" data-cut aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 14 6l4 4L7 21l-4-4Z"/><path d="M14 6l2-3 5 5-3 2"/></svg>
+    <span>Разрезать</span>
+  </button>
+  <p class="tapp__flat" data-flat hidden></p>
+</main>
+
+<section class="tapp__sheet" aria-label="Сборка торта">
+  <nav class="tapp__steps" data-steps role="tablist" aria-label="Шаги"></nav>
+  <div class="tapp__panel" data-panel role="tabpanel"></div>
+  <div class="tapp__nav">
+    <button class="btn btn--ghost" data-prev>Назад</button>
+    <button class="btn btn--berry" data-next>Дальше</button>
+  </div>
+</section>
+
+<script type="module" src="js/page-app.js"></script>
+</body>
+</html>

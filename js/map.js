@@ -7,7 +7,7 @@ const NS = 'http://www.w3.org/2000/svg'
 const el = (n, a = {}) => { const e = document.createElementNS(NS, n); for (const k in a) if (a[k] != null) e.setAttribute(k, a[k]); return e }
 
 export function renderMap(host, data, opts = {}) {
-  const { interactive = true, pins = true, labels = true } = opts
+  const { interactive = true, pins = true, labels = true, shop: withShop = true } = opts
   const [VX, VY, W, H] = data.viewBox.split(' ').map(Number)
   const zoneByKey = Object.fromEntries(data.delivery.zones.map((z) => [z.key, z]))
 
@@ -88,12 +88,14 @@ export function renderMap(host, data, opts = {}) {
     }
   }
 
-  // the workshop
-  const shop = document.createElement('div')
-  shop.className = 'umap__shop'
-  shop.innerHTML = `<i></i><span><b>Цех</b><em>Гагарина 25/1</em></span>`
-  place(shop, data.shop.xy)
-  layer.append(shop)
+  // the workshop (a page with its own markers, like «Где купить», leaves it out)
+  if (withShop) {
+    const shop = document.createElement('div')
+    shop.className = 'umap__shop'
+    shop.innerHTML = `<i></i><span><b>Цех</b><em>Гагарина 25/1</em></span>`
+    place(shop, data.shop.xy)
+    layer.append(shop)
+  }
 
   // ------------------------------------------------------ pin labels
   // The dot sits exactly on the place; its label can go on any side of it. On a phone
@@ -202,7 +204,7 @@ export function renderMap(host, data, opts = {}) {
   document.fonts?.ready.then(() => requestAnimationFrame(layout))
 
   // ------------------------------------------------------ interaction
-  const api = { svg, layer, nodes, select: () => {} }
+  const api = { svg, layer, nodes, place, select: () => {} }
   if (!interactive) return api
 
   let current = null

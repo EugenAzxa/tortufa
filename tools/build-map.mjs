@@ -110,8 +110,9 @@ const out = {
   viewBox: `0 0 ${W} ${H}`,
   bbox,
   kx,
-  // the workshop itself: ул. Гагарина 25/1, Ufa
-  shop: { name: 'Цех «Уфа Десерт»', addr: 'ул. Гагарина 25/1', lonlat: [56.0447, 54.7256], xy: proj([56.0447, 54.7256]) },
+  // the workshop itself: ул. Юрия Гагарина 25/1, Сипайлово (checked by reverse geocoding;
+  // plain «Гагарина» sends Nominatim to a namesake street outside the city)
+  shop: { name: 'Цех «Уфа Десерт»', addr: 'ул. Гагарина 25/1', lonlat: [56.0676, 54.7665], xy: proj([56.0676, 54.7665]) },
   city: shapes.filter((s) => s.level === 'city').map((s) => ({ name: s.name, d: toPath(s.rings), osm: s.osm }))[0] || null,
   districts: shapes.filter((s) => s.level === 'district').map((s) => ({
     name: s.name,

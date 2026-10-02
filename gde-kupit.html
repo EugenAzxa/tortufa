@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Где купить торты «Уфа Десерт» – 22 магазина · Тортуфа</title>
+<meta name="description" content="Адреса, телефоны и часы работы всех 22 магазинов кондитерского цеха «Уфа Десерт» в Уфе, Нагаево, Зубово, Чишмах, Иглино, Благовещенске и других городах. Маршрут в один тап.">
+<meta name="theme-color" content="#fdf8f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1618" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Где купить торты «Уфа Десерт»">
+<meta property="og:description" content="22 магазина цеха на одной карте: адреса, часы, телефоны.">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<main id="main" class="wrap">
+
+  <div class="sec-head">
+    <div>
+      <p class="kicker">Где купить</p>
+      <h2>Магазины<br>цеха</h2>
+    </div>
+    <p data-lede>Торты, пирожные и чак-чак цеха продаются в его собственных магазинах – в Уфе и в посёлках вокруг. Готовые торты из витрины можно забрать в тот же день.</p>
+  </div>
+
+  <div class="shops">
+    <div class="shops__map">
+      <div class="umap-host" data-map></div>
+      <p class="shops__hint">Нажмите на номер – магазин подсветится в списке</p>
+    </div>
+    <div class="shops__side">
+      <div class="shops__filter" role="group" aria-label="Показать">
+        <button class="chip" data-town="all" aria-pressed="true">Все</button>
+        <button class="chip" data-town="ufa" aria-pressed="false">Уфа</button>
+        <button class="chip" data-town="out" aria-pressed="false">Пригороды</button>
+        <button class="chip" data-town="open" aria-pressed="false">Открыто сейчас</button>
+      </div>
+      <ol class="shops__list" data-list></ol>
+    </div>
+  </div>
+
+  <p class="shops__src">Адреса и часы – со страницы <a href="https://tortufa.ru/kontakt/" target="_blank" rel="noopener">tortufa.ru/kontakt</a>. Перед поездкой лучше позвонить: в торговых центрах часы могут меняться.</p>
+
+</main>
+<script type="module" src="js/page-shops.js"></script>
+</body>
+</html>

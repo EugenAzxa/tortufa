@@ -19,9 +19,21 @@ const showy = cakes
 const hero = showy[Math.floor(Math.random() * showy.length)] || cakes[0]
 
 const heroCv = document.querySelector('[data-hero-cake]')
-const cake = new Cake3D(heroCv, hero, { open: false })
+let cake = new Cake3D(heroCv, hero, { open: false })
+// The flat cake paints at once; the lit WebGL one loads behind it, takes the same grid
+// cell, and replaces it only after its first frame, so there is never an empty stage.
+// Without WebGL the flat one simply stays.
+import('./cake-gl.js').then(({ CakeGL, webglOK }) => {
+  if (!webglOK()) return
+  const cv = document.createElement('canvas')
+  cv.setAttribute('aria-label', heroCv.getAttribute('aria-label'))
+  cv.className = 'cake3d__gl'
+  heroCv.after(cv)
+  const gl = new CakeGL(cv, hero, { open: cake.cutTarget > 0.5 })
+  cv.addEventListener('cake:ready', () => { cake.destroy(); heroCv.remove(); cake = gl }, { once: true })
+}).catch(() => {})
 const heroRead = document.querySelector('[data-hero-read]')
-heroCv.addEventListener('cake:layer', (e) => {
+heroCv.parentElement.addEventListener('cake:layer', (e) => {
   heroRead.textContent = e.detail ? `${e.detail.role}: ${e.detail.label}` : ''
   heroRead.style.opacity = e.detail ? 1 : 0
 })

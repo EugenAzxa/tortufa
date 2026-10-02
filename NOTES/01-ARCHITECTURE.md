@@ -48,6 +48,25 @@ removes an angular range from the wall and draws the two radial faces inside the
 when the notch spins to the back the faces are skipped and the cake reads as whole, which
 is also physically correct. The removed wedge is drawn separately on the plate.
 
+**`js/cake-gl.js` — the lit cake.** The same contract as `cake3d.js` (constructor,
+`setItem`, `toggleCut`, `setFocus`, `destroy`, the `cake:layer` event) in WebGL, used on
+the cover and in the app. What it changes is the outside: a real cake shows its layers
+only where it is cut. Trailing `обмазка`/`покрытие` layers become the coat, with real
+radial thickness, and the sides wear them; a cake with no coat stays naked and shows its
+stripes. Glaze poured over frosting stays on top and drips; glazed straight onto sponge,
+it covers the sides. Geometry is hand-built in cake-local coordinates (x = r·sinθ,
+z = r·cosθ, three's own cylinder convention) as two groups, body and slice, which share
+their cut faces, so the whole cake is seamless and cutting just slides the slice out.
+Piping, berries and an inscription exist only as options: the catalogue never says a
+cake has roses, so the cover never shows any. The inscription is a canvas texture on an
+overlay with planar uv over the whole top, which is why it splits cleanly when cut.
+
+Three.js is not loaded from a CDN. `tools/three-entry.mjs` lists the classes in use and
+`npm run vendor` bundles just those into `js/vendor/three.min.js` (~140 KB gzipped). A new
+class in `cake-gl.js` means a new name there and a rebuild, or the import is `undefined`.
+Pages load `cake-gl.js` with a dynamic import and keep `cake3d.js` as the fallback; the
+cover paints the flat cake first and swaps only after the WebGL one has drawn a frame.
+
 ## Animation has to be fail-safe
 
 The staged reveal of the layers originally used a CSS animation with `fill: both` and a

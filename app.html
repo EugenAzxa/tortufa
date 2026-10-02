@@ -25,10 +25,9 @@
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/app.css">
 <script>
-/* the loading screen (js/boot.js): first visit of the session only, decided before first
-   paint so a returning reader never sees it flash. The timer is the last resort if the
-   module never runs: the screen can delay the page, never hide it. */
-try{if(!sessionStorage.getItem('tortufa.boot')){document.documentElement.classList.add('boot-on');setTimeout(function(){document.documentElement.classList.remove('boot-on')},10000)}}catch(e){}
+/* the loading screen (js/boot.js) on every load, switched on before first paint. The
+   timer is the last resort if the module never runs: it can delay the page, never hide it. */
+document.documentElement.classList.add('boot-on');setTimeout(function(){document.documentElement.classList.remove('boot-on')},10000)
 </script>
 </head>
 <body class="tapp">

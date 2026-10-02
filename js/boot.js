@@ -1,8 +1,7 @@
 /* boot.js — the loading screen: a cake turning while the page gets ready.
 
-   Shown on the cover and in the app, once per browser session (a tiny inline script in
-   <head> decides, before first paint, and adds .boot-on; without it — no JS, or a later
-   page in the same session — the screen never appears at all).
+   Shown on the cover and in the app on every load (a tiny inline script in <head> adds
+   .boot-on before first paint; without JS the screen never appears at all).
 
    The cake on it is the flat canvas one: no dependencies, so it turns at once. What the
    bar measures is real: the fonts, the catalogue, the WebGL module and the first frame
@@ -16,7 +15,6 @@ const el = document.getElementById('boot')
 if (el && root.classList.contains('boot-on')) run()
 
 function run() {
-  try { sessionStorage.setItem('tortufa.boot', '1') } catch {}
   const bar = el.querySelector('.boot__bar i')
   const pct = el.querySelector('.boot__pct')
 

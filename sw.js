@@ -4,11 +4,11 @@
    deploy is picked up on the next open and nobody runs yesterday's scripts against
    today's catalogue. Only what never changes under the same name (three.js, photos,
    icons, fonts) is served from the cache first. */
-const CACHE = 'tortufa-v2'
+const CACHE = 'tortufa-v3'
 const SHELL = [
   'app.html', 'manifest.webmanifest',
   'css/main.css', 'css/components.css', 'css/app.css',
-  'js/page-app.js', 'js/app.js', 'js/recipe.js', 'js/section.js', 'js/cake3d.js', 'js/cake-gl.js', 'js/custom.js',
+  'js/page-app.js', 'js/boot.js', 'js/app.js', 'js/recipe.js', 'js/section.js', 'js/cake3d.js', 'js/cake-gl.js', 'js/custom.js',
   'js/vendor/three.min.js', 'data/catalog.json', 'assets/favicon.svg', 'assets/app-qr.svg',
 ]
 

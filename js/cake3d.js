@@ -32,7 +32,7 @@ export class Cake3D {
   constructor(canvas, item, opts = {}) {
     this.cv = canvas
     this.ctx = canvas.getContext('2d')
-    this.opts = { squash: 0.34, wedge: 58, autospin: true, ...opts }
+    this.opts = { squash: 0.34, wedge: 58, autospin: true, spinDelay: 1400, spinSpeed: 0.00016, ...opts }
     this.yaw = -0.5
     this.spin = 0
     this.wedgeAt = 0        // where the wedge sits on the cake, in cake-local radians
@@ -179,8 +179,8 @@ export class Cake3D {
       if (Math.abs(this.spin) > 0.0002) { this.yaw += this.spin; this.spin *= 0.93; this.dirty = true }
       else {
         this.idle += dt
-        if (this.opts.autospin && this.idle > 1400 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          this.yaw += dt * 0.00016
+        if (this.opts.autospin && this.idle >= this.opts.spinDelay && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          this.yaw += dt * this.opts.spinSpeed
           this.dirty = true
         }
       }

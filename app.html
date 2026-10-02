@@ -24,8 +24,20 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/app.css">
+<script>
+/* the loading screen (js/boot.js): first visit of the session only, decided before first
+   paint so a returning reader never sees it flash. The timer is the last resort if the
+   module never runs: the screen can delay the page, never hide it. */
+try{if(!sessionStorage.getItem('tortufa.boot')){document.documentElement.classList.add('boot-on');setTimeout(function(){document.documentElement.classList.remove('boot-on')},10000)}}catch(e){}
+</script>
 </head>
 <body class="tapp">
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot__cake"><canvas></canvas></div>
+  <p class="boot__name">Тортуфа</p>
+  <div class="boot__bar"><i></i></div>
+  <p class="boot__pct">ПЕЧЁМ 0%</p>
+</div>
 
 <header class="tapp__bar">
   <a class="tapp__back" href="index.html" aria-label="В журнал">
@@ -59,6 +71,7 @@
   </div>
 </section>
 
+<script type="module" src="js/boot.js"></script>
 <script type="module" src="js/page-app.js"></script>
 </body>
 </html>
